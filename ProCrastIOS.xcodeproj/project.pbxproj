@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,21 @@
 		C9ECA35D253BCCF300EF6D02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ECA35C253BCCF300EF6D02 /* Preview Assets.xcassets */; };
 		C9ECA368253BCCF300EF6D02 /* ProCrastIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA367253BCCF300EF6D02 /* ProCrastIOSTests.swift */; };
 		C9ECA373253BCCF300EF6D02 /* ProCrastIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA372253BCCF300EF6D02 /* ProCrastIOSUITests.swift */; };
+		C9ECA38D253BCDC300EF6D02 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA383253BCDC200EF6D02 /* Simulation.swift */; };
+		C9ECA38E253BCDC300EF6D02 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA384253BCDC200EF6D02 /* ActivityView.swift */; };
+		C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */; };
+		C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */; };
+		C9ECA391253BCDC300EF6D02 /* ActivityStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */; };
+		C9ECA392253BCDC300EF6D02 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA388253BCDC200EF6D02 /* AppModel.swift */; };
+		C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38A253BCDC200EF6D02 /* Config.swift */; };
+		C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */; };
+		C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */; };
+		C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */; };
+		C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */; };
+		C9ECA3A0253BD0C800EF6D02 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */; };
+		C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AA253BD51300EF6D02 /* Activity.swift */; };
+		C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */; };
+		C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +60,18 @@
 		C9ECA36E253BCCF300EF6D02 /* ProCrastIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProCrastIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA372253BCCF300EF6D02 /* ProCrastIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSUITests.swift; sourceTree = "<group>"; };
 		C9ECA374253BCCF300EF6D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9ECA383253BCDC200EF6D02 /* Simulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		C9ECA384253BCDC200EF6D02 /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
+		C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNav.swift; sourceTree = "<group>"; };
+		C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStats.swift; sourceTree = "<group>"; };
+		C9ECA388253BCDC200EF6D02 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		C9ECA38A253BCDC200EF6D02 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMenu.swift; sourceTree = "<group>"; };
+		C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
+		C9ECA3AA253BD51300EF6D02 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
+		C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ECA3A0253BD0C800EF6D02 /* ComposableCoreLocation in Frameworks */,
+				C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */,
+				C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +128,11 @@
 				C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */,
 				C9ECA357253BCCDF00EF6D02 /* ContentView.swift */,
 				C9ECA359253BCCF300EF6D02 /* Assets.xcassets */,
+				C9ECA3C2253BE14200EF6D02 /* Charts */,
+				C9ECA3C1253BE12000EF6D02 /* Activity */,
+				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
 				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
+				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
 				C9ECA35B253BCCF300EF6D02 /* Preview Content */,
 			);
 			path = ProCrastIOS;
@@ -130,6 +164,30 @@
 			path = ProCrastIOSUITests;
 			sourceTree = "<group>";
 		};
+		C9ECA3C1253BE12000EF6D02 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECA3AA253BD51300EF6D02 /* Activity.swift */,
+				C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */,
+				C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */,
+				C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */,
+				C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */,
+				C9ECA384253BCDC200EF6D02 /* ActivityView.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		C9ECA3C2253BE14200EF6D02 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */,
+				C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */,
+				C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */,
+				C9ECA388253BCDC200EF6D02 /* AppModel.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +204,11 @@
 			dependencies = (
 			);
 			name = ProCrastIOS;
+			packageProductDependencies = (
+				C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */,
+				C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */,
+				C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */,
+			);
 			productName = ProCrastIOS;
 			productReference = C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +280,9 @@
 				Base,
 			);
 			mainGroup = C9ECA349253BCCDF00EF6D02;
+			packageReferences = (
+				C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = C9ECA353253BCCDF00EF6D02 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,7 +326,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */,
+				C9ECA38E253BCDC300EF6D02 /* ActivityView.swift in Sources */,
+				C9ECA391253BCDC300EF6D02 /* ActivityStats.swift in Sources */,
+				C9ECA392253BCDC300EF6D02 /* AppModel.swift in Sources */,
+				C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */,
+				C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */,
+				C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */,
+				C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */,
+				C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */,
+				C9ECA38D253BCDC300EF6D02 /* Simulation.swift in Sources */,
+				C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */,
+				C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */,
 				C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */,
+				C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +652,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableCoreMotion;
+		};
+		C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableCoreLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9ECA34A253BCCDF00EF6D02 /* Project object */;
 }
