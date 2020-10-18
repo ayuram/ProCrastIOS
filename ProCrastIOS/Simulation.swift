@@ -22,13 +22,11 @@ struct Simulation: View {
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack(spacing: 10){
                         ForEach(activities.activities){ activity in
-                            
-                            GeometryReader { geometry in
-                                ActivityCard(activity)
-                                    .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX) / -20), axis: (x: 0, y: 10.0, z: 0))
-                                    .shadow(radius: 5)
-                            }.frame(width:110, height: 180)
-                            
+                                GeometryReader { geometry in
+                                    ActivityCard(activity)
+                                        .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX) / -20), axis: (x: 0, y: 10.0, z: 0))
+                                        .shadow(radius: 5)
+                                }.frame(width:110, height: 180)
                         }
                     }
                 }

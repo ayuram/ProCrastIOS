@@ -19,6 +19,11 @@ extension UIColor {
         return UIColor(red: .random(), green: .random(), blue: .random(), alpha: 0.9)
     }
 }
+extension Double{
+    func truncate(_ places: Int) -> Double{
+        Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
+    }
+}
 struct ActivityView: View {
     public let activity: Activity
     let myColor: Color
@@ -68,9 +73,9 @@ struct ActivityView: View {
                         .minimumScaleFactor(0.1)
                         HStack{
                             VStack{
-                                Text("20")
+                                Text("\(activity.times.max()!.truncate(2) ?? 0.0)")
                                 Spacer()
-                                Text("0")
+                                Text("\(activity.times.min()!.truncate(2) ?? 0.0)")
                             }
                             LineGraph(activity.times.map{CGFloat($0)}.normalized)
                                 .trim(to: on ? 1: 0)

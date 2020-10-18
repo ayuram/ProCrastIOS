@@ -31,12 +31,6 @@ struct ContentView: View {
             }
         }.environmentObject(activities)
     }
-//    func currView() -> some View{
-//        switch curr{
-//        case .menu: return ActivityMenu()
-//        case .simulate: return Simulation()
-//        }
-//    }
 }
 enum view{
     case menu
