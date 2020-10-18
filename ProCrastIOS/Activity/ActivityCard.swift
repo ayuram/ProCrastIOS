@@ -18,6 +18,7 @@ struct ActivityCard: View {
             VStack{
                 Text(activity.name)
                     .font(.system(.headline))
+                    .frame(width: 110)
                 HStack{
                     Button(action: {self.activity.changeReps(-)}){
                         Image(systemName: "minus.circle")
@@ -25,12 +26,12 @@ struct ActivityCard: View {
                     .scaleEffect(0.7)
                     Text("\(self.activity.reps)")
                         .scaleEffect(0.9)
-                    
+                        .frame(width: 30)
                     Button(action: {self.activity.changeReps(+)}){
                         Image(systemName: "plus.circle")
                     }
                     .scaleEffect(0.7)
-                }
+                }.padding()
             }.foregroundColor(Color("text"))
         
             

@@ -23,6 +23,9 @@ extension Double{
     func truncate(_ places: Int) -> Double{
         Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
+    func int() -> Int{
+        Int(self)
+    }
 }
 struct ActivityView: View {
     public let activity: Activity
@@ -73,9 +76,9 @@ struct ActivityView: View {
                         .minimumScaleFactor(0.1)
                         HStack{
                             VStack{
-                                Text("\(activity.times.max()!.truncate(2) ?? 0.0)")
+                                Text("\(activity.times.max()?.int() ?? 0)")
                                 Spacer()
-                                Text("\(activity.times.min()!.truncate(2) ?? 0.0)")
+                                Text("\(activity.times.min()?.int() ?? 0)")
                             }
                             LineGraph(activity.times.map{CGFloat($0)}.normalized)
                                 .trim(to: on ? 1: 0)
@@ -123,12 +126,7 @@ struct ActivityView: View {
             .bold()
         }
     }
-    func grade() -> some View{
-        switch activity.formattedGrade(){
-        case .none: return Text("")
-        default: return Text("Grade: \(activity.formattedGrade()!)")
-        }
-    }
+    
 }
 extension Array where Element == CGFloat{
     var normalized: [CGFloat] {

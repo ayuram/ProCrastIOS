@@ -14,13 +14,28 @@ extension Color{
         return presets[Int.random(in: 0 ... presets.count - 1)]
     }
 }
+extension Array where Element == Double{
+    func mean() -> Double{
+        (self.reduce(0.0) { $0 + $1 })/(self.count.double() == 0 ? 1 : self.count.double())
+    }
+    func MAD() -> Double{
+        self.map{ abs($0 - self.mean()) }.mean()
+    }
+    func median() -> Double {
+        self.sorted()[self.count/2]
+    }
+}
+extension Int{
+    func double() -> Double{
+        Double(self)
+    }
+}
 class Activity: Identifiable, ObservableObject{
-    
     var id: UUID
     var deadline: Date
     public var name: String
-    @Published var times: Array<Double>
-    public var grade: Double?
+    @Published var times: [Double]
+    
     @Published var reps: Int = 1
     var color: Color = Color.randomColor()
     
@@ -34,11 +49,21 @@ class Activity: Identifiable, ObservableObject{
         times.append(time)
     }
     func avgTime() -> Double?{
-        let y : Double = Double(times.count)
-        let x : Double = times.reduce(0.0, { a, b in a + b/y })
         switch times.count{
         case 0: return .none
-        default: return x
+        default: return times.mean()
+        }
+    }
+    func medianTime() -> Double?{
+        switch times.count{
+        case 0: return .none
+        default: return times.median()
+        }
+    }
+    func MADTime() -> Double?{
+        switch times.count{
+        case 0: return .none
+        default: return times.MAD()
         }
     }
     func changeName(_ newName: String) -> Void{
@@ -53,12 +78,7 @@ class Activity: Identifiable, ObservableObject{
     func formattedRecent() -> String {
         return "\(Int(times[times.count - 1])) mins"
     }
-    func formattedGrade() -> String?{
-        switch grade{
-        case .none: return .none
-        default: return "\(grade!)%"
-        }
-    }
+    
     func changeReps(_ x: (Int, Int) -> Int) -> Void{
         let y =  x(reps, 1)
         
@@ -77,16 +97,15 @@ class Activities: ObservableObject{
         self.activities = []
     }
     func totalTime() -> Double {
-        
         activities
             .map {
-                switch $0.avgTime(){
-                case .none: return 0
-                default: return $0.avgTime()!
-                }
-                
+                ($0.avgTime() ?? 0) * $0.reps.double()
             }
             .reduce(0.0, +)
     }
+    func highestTime() -> Double? {
+        activities
+            .map { ($0.times.max() ?? 0) }
+            .max()
+    }
 }
-

@@ -59,12 +59,7 @@ struct ActivityNav: View {
         }
             .padding(.trailing, 20)
     }
-    func grade() -> Text{
-        switch dest.activity.grade{
-        case .none: return Text("")
-        default: return Text("\(dest.activity.formattedGrade()!)")
-        }
-    }
+    
     func text() -> Text{
         Text("\(activity.reps)")
     }

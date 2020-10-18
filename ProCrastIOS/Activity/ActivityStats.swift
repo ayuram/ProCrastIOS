@@ -14,33 +14,56 @@ struct ActivityStats: View {
         act = a
         
     }
+    @State var animateChart = false
     var body: some View {
         
         
-        NavigationView {
+       
             ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color("background"), act.color]), startPoint: .top, endPoint: .bottom)
-                
-                HStack{
-                    VStack{
-                        
-                        BarGraph(name: "Avg Time", val: 56, max: 13).animation(.easeInOut(duration: 1))
-                            .shadow(radius: 10)
+                LinearGradient(gradient: Gradient(colors: [Color("background"), Color("background"), act.color.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
+                    HStack{
+                        Text(act.name.capitalized)
+                            .bold()
+                            .font(.largeTitle)
+                            Spacer()
                     }.padding()
-                    LineGraph(act.times.map{CGFloat($0)})
-                    .trim(to: 1)
-                    .stroke(Color.red, lineWidth: 2)
-                    .aspectRatio(16/9, contentMode: .fit)
-                    .border(Color.gray, width: 1)
-                    .padding()
-                    .animation(.easeInOut(duration: 1))
+                    Spacer()
+                    HStack{
+                        VStack{
+                            
+                                
+                                BarGraph(name: "Average Time", val: act.avgTime() ?? 0, max: 13, units: "mins").animation(.easeInOut(duration: 1))
+                                    .shadow(radius: 10)
+                            
+                        }.padding()
+                        HStack{
+                            VStack{
+                                Text("20")
+                                Spacer()
+                                Text("0")
+                            }.padding(.vertical, 10)
+                            LineGraph(act.times.map{CGFloat($0)})
+                                .trim(to: animateChart ? 1 : 0)
+                                .stroke(act.color, lineWidth: 2)
+                                    .onAppear(perform: {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                            self.animateChart = true
+                                        }
+                                    })
+                                .animation(.easeInOut(duration: 1))
+                                .border(Color.gray, width: 1)
+                        }
+                    }.frame(height: 200)
+                    Spacer()
                 }
                     
-                .navigationBarTitle(act.name)
+                
             }
             
             
-        }
+        
         
     }
     func avgtime() -> some View{
