@@ -2,15 +2,21 @@
 //  ActivityMenu.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/7/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 
 import SwiftUI
+import Combine
 
+enum WhichSheet {
+    case book, generic
+}
 struct ActivityMenu: View {
     @State public var show = false
-    @EnvironmentObject var activities: Activities
+    @State var type = WhichSheet.book
+    @State var acSheet = false
+    @EnvironmentObject var activities: Data
     @State var actname: String = ""
     var body: some View {
         ZStack{
@@ -18,25 +24,32 @@ struct ActivityMenu: View {
                 List{
                     ForEach(activities.activities) { activity in
                         ActivityNav(activity)
+                            .listRowBackground(activity.color)
                     }.onDelete(perform: deleteItems)
                 }
                 .navigationBarTitle("Activities")
                 .navigationBarItems(trailing: Button(action: {
-                    self.show = true
+                    self.acSheet.toggle()
                 }){
                     Image(systemName: "plus.circle.fill")
                     }
                 
                 .contentShape(Circle())
                 )
-                
-               
                 .accentColor(Color("accent"))
+            }.sheet(isPresented: $show){
+                type == .generic ? AnyView(newAct()) : AnyView(newTextBook())
             }
-        
-            .blur(radius: show ? 4 : 0)
-            if(show){
-                self.newAct()
+            .actionSheet(isPresented: $acSheet){
+                ActionSheet(title: Text("Choose Activity Type"), buttons: [
+                    .default(Text("Generic").foregroundColor(.red)) { self.show.toggle()
+                        type = .generic
+                    },
+                    .default(Text("Textbook")) { self.show.toggle()
+                        type = .book
+                    },
+                    .cancel()
+                ])
             }
         }
     }
@@ -44,34 +57,53 @@ struct ActivityMenu: View {
         activities.activities.remove(atOffsets: offsets)
     }
     func newAct() -> some View{
-        ZStack{
+        NavigationView{
             VStack {
-                //Text("Activity Name")
-                
-                TextField("Name", text: $actname)
-                    .padding()
-                    .zIndex(1)
-                Divider()
+                TextField("Activity Name", text: $actname)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            .navigationBarTitle("Add Activity")
+            .navigationBarItems(leading: Button("Cancel"){
+                self.actname = ""
+                self.show = false
+            },trailing: Button("Save"){
+                self.activities.activities.append(Activity(self.actname))
+                self.actname = ""
+                self.show = false
+            })
+            
+        }
+    }
+    @State var ISBN = ""
+    func newTextBook() -> some View{
+        NavigationView{
+            VStack {
                 HStack{
-                    Button("Cancel"){
-                        self.show = false
-                        self.actname = ""
-                    }.frame(width: 60, alignment: Alignment.leading)
-                        
-                    Divider()
-                    Button("Save"){
-                        self.activities.activities.append(Activity(self.actname))
-                        self.actname = ""
-                        self.show = false
-                    }.frame(width: 60, alignment: Alignment.trailing)
+                    TextField("Course Name", text: $actname)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("ISBN-13", text: $ISBN)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.numberPad)
+                        .onReceive(Just(ISBN), perform: { newValue in
+                            let filtered = newValue.filter {"0123456789".contains($0)}
+                            ISBN = filtered != newValue ? filtered : ISBN
+                        })
                 }
             }
-            .background(Color.white)
-            .frame(width: 200.0, height: 150.0)
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 3.0))
-            .compositingGroup()
-            .shadow(radius: 1)
-            .cornerRadius(2)
+            .navigationBarTitle("Add Course")
+            .navigationBarItems(leading: Button("Cancel"){
+                self.actname = ""
+                self.ISBN = ""
+                self.show = false
+            },trailing: Button("Save"){
+                let act = Activity(actname)
+                act.textbook = Textbook(ISBN: ISBN, pages: .none)
+                activities.activities.append(act)
+                self.actname = ""
+                self.ISBN = ""
+                self.show = false
+            })
+            
         }
     }
 }
@@ -79,5 +111,6 @@ struct ActivityMenu: View {
 struct ActivityMenu_Previews: PreviewProvider {
     static var previews: some View {
         ActivityMenu()
+            .environmentObject(Data())
     }
 }

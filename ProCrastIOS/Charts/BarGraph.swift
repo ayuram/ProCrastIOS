@@ -2,7 +2,7 @@
 //  BarGraph.swift
 //  FTCscorer
 //
-//  Created by Ayush Raman on 10/6/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 MSET Cuttlefish. All rights reserved.
 //
 

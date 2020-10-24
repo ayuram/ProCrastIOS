@@ -2,7 +2,7 @@
 //  Activity.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/5/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 
@@ -25,6 +25,13 @@ extension Array where Element == Double{
         self.sorted()[self.count/2]
     }
 }
+struct Textbook: Equatable{
+    static func == (lhs: Textbook, rhs: Textbook) -> Bool{
+        lhs.ISBN == rhs.ISBN
+    }
+    var ISBN: String
+    var pages: ClosedRange<Int>?
+}
 extension Int{
     func double() -> Double{
         Double(self)
@@ -32,8 +39,8 @@ extension Int{
 }
 class Activity: Identifiable, ObservableObject{
     var id: UUID
-    var deadline: Date
     public var name: String
+    var textbook: Textbook? = .none
     @Published var times: [Double]
     
     @Published var reps: Int = 1
@@ -43,7 +50,6 @@ class Activity: Identifiable, ObservableObject{
         name = n
         times = []
         id = UUID()
-        deadline = Date()
     }
     func addTime(_ time: Double) -> Void{
         times.append(time)
@@ -82,8 +88,8 @@ class Activity: Identifiable, ObservableObject{
     func changeReps(_ x: (Int, Int) -> Int) -> Void{
         let y =  x(reps, 1)
         
-        if(y < 0){
-            reps = 0
+        if(y < 1){
+            reps = 1
         }
         else{
             reps = x(reps, 1)
@@ -91,7 +97,7 @@ class Activity: Identifiable, ObservableObject{
     }
     
 }
-class Activities: ObservableObject{
+class Data: ObservableObject{
     @Published var activities: [Activity]
     init(){
         self.activities = []

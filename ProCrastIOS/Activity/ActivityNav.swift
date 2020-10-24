@@ -17,17 +17,17 @@ extension Int{
     }
 }
 struct ActivityNav: View {
-    let dest: ActivityView
+    let dest: ActivityStats
     @ObservedObject var activity: Activity
     init(_ d: Activity) {
-        dest = ActivityView(d)
+        dest = ActivityStats(d)
         activity = d
     }
     var body: some View {
             NavigationLink(destination: dest) {
                     HStack {
                         VStack{
-                        Text(dest.activity.name)
+                        Text(activity.name)
                             //.font(.system(size: 24.0))
                             //.font(.system(.subheadline))
                             .padding(12)
@@ -38,26 +38,12 @@ struct ActivityNav: View {
                         }.padding(.leading, 20)
                         Spacer()
                         
-                        Image(systemName: "minus.circle")
-                            .onTapGesture {
-                                self.activity.changeReps(-)
-                                //self.x = self.dest.activity.reps
-                        }
-                        .scaleEffect(0.7)
-                        text()
-                        Image(systemName: "plus.circle")
-                            .onTapGesture {
-                                self.activity.changeReps(+)
-                                //self.x = self.dest.activity.reps
-                        }
-                        .scaleEffect(0.7)
                     }.padding(.trailing,100)
                 
                 
-                        .background(dest.myColor)
-                .clipShape(Capsule())
+                    .background(activity.color)
+                //.clipShape(Capsule())
         }
-            .padding(.trailing, 20)
     }
     
     func text() -> Text{

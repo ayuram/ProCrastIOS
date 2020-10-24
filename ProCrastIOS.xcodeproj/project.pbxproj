@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E11D2544CA42003F108D /* LoginView.swift */; };
 		C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */; };
 		C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA357253BCCDF00EF6D02 /* ContentView.swift */; };
 		C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ECA359253BCCF300EF6D02 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9A0E11D2544CA42003F108D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCrastIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSApp.swift; sourceTree = "<group>"; };
 		C9ECA357253BCCDF00EF6D02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */,
+				C9A0E11D2544CA42003F108D /* LoginView.swift */,
 				C9ECA357253BCCDF00EF6D02 /* ContentView.swift */,
 				C9ECA359253BCCF300EF6D02 /* Assets.xcassets */,
 				C9ECA3C2253BE14200EF6D02 /* Charts */,
@@ -328,6 +331,7 @@
 				C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */,
 				C9ECA38E253BCDC300EF6D02 /* ActivityView.swift in Sources */,
 				C9ECA391253BCDC300EF6D02 /* ActivityStats.swift in Sources */,
+				C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */,
 				C9ECA392253BCDC300EF6D02 /* AppModel.swift in Sources */,
 				C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */,
 				C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */,

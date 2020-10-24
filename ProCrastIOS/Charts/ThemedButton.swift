@@ -2,7 +2,7 @@
 //  ThemedButton.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/6/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 
@@ -12,28 +12,30 @@ struct ThemedButton: View {
     var text: String = "Button"
     var buttonColor: Color = Color("accent")
     var textColor: Color = Color.white
+    var width: CGFloat = 90
+    var height: CGFloat = 55
     var action: () -> Void
     
     var body: some View {
-        HStack {
-            Spacer()
+       
+            
             Button(action: action) {
-                Text(text).font(.system(size: 12))
+                Text(text).font(.system(size: 14))
                     //.font(.system(.headline, design: .rounded))
-                
+                    
                     .font(.system(.headline))
                     .fontWeight(.bold)
                     .foregroundColor(textColor)
                     .fixedSize(horizontal: false, vertical: true)
-                    .frame(width: 90.0, height: 55.0)
+                    .frame(width: width, height: height)
             }
             .background(buttonColor)
         .clipShape(RoundedRectangle(cornerRadius: 10))
                 //.overlay(Capsule().stroke(Color.black, lineWidth: 1.0))
-                .shadow(radius: 2.0)
+                .shadow(radius: 5.0)
                 
-            Spacer()
-        }
+            
+        
     }
 }
 

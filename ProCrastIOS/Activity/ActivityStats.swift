@@ -2,7 +2,7 @@
 //  ActivityStats.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/13/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 
@@ -12,28 +12,16 @@ struct ActivityStats: View {
     @ObservedObject var act: Activity
     init(_ a: Activity){
         act = a
-        
     }
     @State var animateChart = false
     var body: some View {
-        
-        
-       
             ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color("background"), Color("background"), act.color.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [Color("background"), Color("background"), Color("background"), act.color.opacity(1)]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    HStack{
-                        Text(act.name.capitalized)
-                            .bold()
-                            .font(.largeTitle)
-                            Spacer()
-                    }.padding()
                     Spacer()
                     HStack{
                         VStack{
-                            
-                                
                                 BarGraph(name: "Average Time", val: act.avgTime() ?? 0, max: 13, units: "mins").animation(.easeInOut(duration: 1))
                                     .shadow(radius: 10)
                             
@@ -44,7 +32,7 @@ struct ActivityStats: View {
                                 Spacer()
                                 Text("0")
                             }.padding(.vertical, 10)
-                            LineGraph(act.times.map{CGFloat($0)})
+                            LineGraph(act.times.map{CGFloat($0)}.normalized)
                                 .trim(to: animateChart ? 1 : 0)
                                 .stroke(act.color, lineWidth: 2)
                                     .onAppear(perform: {
@@ -58,13 +46,7 @@ struct ActivityStats: View {
                     }.frame(height: 200)
                     Spacer()
                 }
-                    
-                
-            }
-            
-            
-        
-        
+            }.navigationBarTitle(act.name.capitalized)
     }
     func avgtime() -> some View{
         switch act.formattedTime(){

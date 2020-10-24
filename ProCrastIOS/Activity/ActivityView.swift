@@ -32,17 +32,17 @@ struct ActivityView: View {
     let myColor: Color
     @ObservedObject var stopWatch = StopWatch()
     @State var on = true
-    @State var due = Date()
+    
     @State var show = false
     init(_ act: Activity){
         activity = act
         myColor = activity.color
         
-        due = activity.deadline
+       // due = activity.deadline
     }
     
     var body: some View {
-        NavigationView {
+        
                 VStack{
                     Spacer()
                     Text(self.stopWatch.stopWatchTime)
@@ -91,26 +91,29 @@ struct ActivityView: View {
                     }.padding()
                         .sheet(isPresented: $show){
                             NavigationView{
-                                DatePicker("Please enter the deadline", selection: self.$due, displayedComponents: [.date, .hourAndMinute])
-                                    .labelsHidden()
-                                    .navigationBarTitle("Select a Date")
-                                    .navigationBarItems(trailing: Button("Save"){
-                                        self.activity.deadline = self.due
-                                        self.show = false
-                                    })
+//                                DatePicker("Please enter the deadline", selection: self.$due, displayedComponents: [.date, .hourAndMinute])
+//                                    .labelsHidden()
+//                                    .navigationBarTitle("Select a Date")
+//                                    .navigationBarItems(trailing: Button("Save"){
+//                                        //self.activity.deadline = self.due
+//                                        self.show = false
+//                                    })
                             }
                     }
                     
                 }
             
             
-        }.navigationBarTitle(activity.name)
-        .navigationBarItems(trailing: Button("Set Deadline"){
+        .navigationBarTitle(activity.name)
+                .navigationBarItems(trailing: Button("Set Pages"){
             self.show = true
-        })
+                }.opacity(activity.textbook == .none ? 0 : 1)
+                .disabled(activity.textbook == .none))
     }
     func save() -> Void{
-        activity.addTime(self.stopWatch.time())
+        if(activity.reps != 0){
+            activity.addTime(self.stopWatch.time()/Double(activity.reps))
+        }
         self.stopWatch.reset()
     }
     func avgtime() -> some View{

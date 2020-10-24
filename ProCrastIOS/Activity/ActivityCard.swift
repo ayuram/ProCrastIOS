@@ -14,7 +14,7 @@ struct ActivityCard: View {
         activity = act
     }
     var body: some View {
-        
+        NavigationLink(destination: ActivityView(activity)){
             VStack{
                 Text(activity.name)
                     .font(.system(.headline))
@@ -24,18 +24,20 @@ struct ActivityCard: View {
                         Image(systemName: "minus.circle")
                     }
                     .scaleEffect(0.7)
+                    
                     Text("\(self.activity.reps)")
                         .scaleEffect(0.9)
                         .frame(width: 30)
+                    
                     Button(action: {self.activity.changeReps(+)}){
                         Image(systemName: "plus.circle")
                     }
                     .scaleEffect(0.7)
                 }.padding()
             }.foregroundColor(Color("text"))
-        
+        }
             
-        .frame(width: 110.0, height: 140.0)
+        .frame(width: 110.0, height: 180.0)
             //.background(LinearGradient(gradient: Gradient(colors: [Color(activity.color), Color(.random())]), startPoint: .top, endPoint: .bottomTrailing))
             .background(activity.color)
             
