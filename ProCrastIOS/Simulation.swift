@@ -110,6 +110,7 @@ struct Simulation: View {
                 //.background(Color("background"))
                 //.clipShape(Capsule())
                 //.shadow(radius: 5)
+                
                 Spacer()
     //            ThemedButton(text: "Calculate"){
     //                var components = DateComponents()
