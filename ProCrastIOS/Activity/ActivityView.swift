@@ -113,9 +113,26 @@ struct ActivityView: View {
                                     endIndex = ""
                                 }, trailing: Button("Save"){
                                     activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
+                                    activity.times = []
+                                    
+                                    let db = Firestore.firestore()
+                                    var arr: [Double] = []
+                                    for n in activity.textbook!.pages!{
+                                        print("loading in")
+                                        let docRef = db.collection("\(activity.textbook!.ISBN)").document("\(n)")
+                                        docRef.getDocument { (document, error) in
+                                            if let document = document, document.exists {
+                                                let dataDescription = document.data()?["times"] as? [Double] ?? []
+                                                arr = arr + dataDescription
+                                                print(dataDescription, " and ", arr)
+                                                activity.addTime(arr.mean())
+                                            }
+                                        }
+                                    }
+                                    print("Array", arr)
+                                    activity.times.append(arr.mean())
+                                    //print("Times: ", arr)
                                     show = false
-                                    startIndex = ""
-                                    endIndex = ""
                                 })
                             }
                     }
@@ -133,7 +150,7 @@ struct ActivityView: View {
         if(activity.reps != 0){
             let val = stopWatch.time()/Double(activity.reps)
             activity.addTime(val)
-            let db = Firestore.firestore()
+           // let db = Firestore.firestore()
            
             if activity.textbook?.pages != .none {
 //                db.collection(activity.textbook!.ISBN).document("0").setData(["Timings": 2017, "Type" : "MeMyself"])
@@ -141,13 +158,16 @@ struct ActivityView: View {
                 for n in (activity.textbook?.pages)!{
                     let docRef = Firestore.firestore().document("\(String(describing: activity.textbook!.ISBN))/\(Int(n))")
                     print("setting data")
-                    docRef.setData(["\(UUID())" : activity.times.last!], merge: true){ error in
+                    docRef.setData(["\(UUID())" : true], merge: true){ error in
                         if let error = error {
                             print("error = \(error)")
                         } else {
                             print("uploaded")
                         }
                     }
+                    docRef.updateData([
+                        "times": FieldValue.arrayUnion([activity.times.last!])
+                    ])
                 }
             }
         }
