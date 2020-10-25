@@ -9,6 +9,9 @@
 import Foundation
 import ComposableArchitecture
 import Combine
+import FirebaseFirestore
+import Firebase
+
 struct Configuration: Codable, Equatable {
     public let title : String
     private let contents: [[Int]]

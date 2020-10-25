@@ -9,6 +9,7 @@
 import SwiftUI
 import Foundation
 import EventKit
+
 struct Simulation: View {
     @EnvironmentObject var activities: Data
     @State var due: Date = Date()

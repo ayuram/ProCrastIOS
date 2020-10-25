@@ -61,6 +61,7 @@ struct ActivityMenu: View {
             VStack {
                 TextField("Activity Name", text: $actname)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
             }
             .navigationBarTitle("Add Activity")
             .navigationBarItems(leading: Button("Cancel"){
@@ -81,6 +82,7 @@ struct ActivityMenu: View {
                 HStack{
                     TextField("Course Name", text: $actname)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .disableAutocorrection(true)
                     TextField("ISBN-13", text: $ISBN)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.numberPad)

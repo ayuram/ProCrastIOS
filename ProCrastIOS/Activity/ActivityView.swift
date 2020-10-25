@@ -9,7 +9,8 @@
 import SwiftUI
 import ComposableArchitecture
 import Combine
-
+import FirebaseFirestore
+import Firebase
 extension CGFloat{
     static func random() -> CGFloat{
         return CGFloat(CGFloat(arc4random()) / CGFloat(UInt32.max))
@@ -130,7 +131,25 @@ struct ActivityView: View {
     }
     func save() -> Void{
         if(activity.reps != 0){
-            activity.addTime(self.stopWatch.time()/Double(activity.reps))
+            let val = stopWatch.time()/Double(activity.reps)
+            activity.addTime(val)
+            let db = Firestore.firestore()
+           
+            if activity.textbook?.pages != .none {
+//                db.collection(activity.textbook!.ISBN).document("0").setData(["Timings": 2017, "Type" : "MeMyself"])
+                
+                for n in (activity.textbook?.pages)!{
+                    let docRef = Firestore.firestore().document("\(String(describing: activity.textbook!.ISBN))/\(Int(n))")
+                    print("setting data")
+                    docRef.setData(["\(UUID())" : activity.times.last!], merge: true){ error in
+                        if let error = error {
+                            print("error = \(error)")
+                        } else {
+                            print("uploaded")
+                        }
+                    }
+                }
+            }
         }
         self.stopWatch.reset()
     }

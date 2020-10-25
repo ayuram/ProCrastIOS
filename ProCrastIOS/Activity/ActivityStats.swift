@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-
+import Firebase
+import FirebaseFirestore
 struct ActivityStats: View {
     @ObservedObject var act: Activity
     init(_ a: Activity){
@@ -45,6 +46,7 @@ struct ActivityStats: View {
                         }
                     }.frame(height: 200)
                     Spacer()
+                    
                 }
             }.navigationBarTitle(act.name.capitalized)
     }
