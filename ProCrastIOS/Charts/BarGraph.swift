@@ -31,6 +31,7 @@ struct BarGraph: View {
                 ZStack(alignment: .bottom){
                     Capsule().frame(width: width, height: height)
                         .foregroundColor(.black)
+                        .border(Color("text"))
                     Capsule().frame(width: width, height: height * CGFloat((val)/max))
                         .foregroundColor(color())
                 }
@@ -47,6 +48,7 @@ struct BarGraph: View {
                 ZStack(alignment: .bottom){
                     Capsule().frame(width: width, height: height)
                         .foregroundColor(.black)
+                        .border(Color("text"))
                     Capsule().frame(width: width, height: height)
                         .foregroundColor(.green)
                 }

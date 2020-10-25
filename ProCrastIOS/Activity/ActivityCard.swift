@@ -2,7 +2,7 @@
 //  ActivityCard.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/8/20.
+//  Created by Ayush Raman on 10/24/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 

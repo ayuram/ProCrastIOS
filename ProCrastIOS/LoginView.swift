@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
-
+import Firebase
 struct LoginView: View {
     @State var password: String = ""
     @State var username: String = ""
+    @State var alertMessage = ""
+    @State var showAlert = false
+    @State var success = false
     var body: some View {
         ZStack{
             Color("accent")
@@ -38,7 +41,7 @@ struct LoginView: View {
                 .frame(width: 300, height: 100, alignment: .center)
                 .background(Color.white)
                 .clipShape(Capsule())
-                .shadow(radius: 5)
+                .shadow(color: .green, radius: 10)
                 HStack{
                     Spacer()
                     ThemedButton(text: "Register", buttonColor: .orange){
@@ -53,6 +56,22 @@ struct LoginView: View {
                 Spacer()
             }
             .padding()
+        }
+    }
+    func login(){
+        Auth.auth().signIn(withEmail: username, password: password){ (result, error) in
+            if error != nil {
+                alertMessage = error?.localizedDescription ?? ""
+                showAlert = true
+            }
+            else{
+                success = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    success = false
+                    username = ""
+                    password = ""
+                }
+            }
         }
     }
 }
