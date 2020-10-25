@@ -87,7 +87,6 @@ class Activity: Identifiable, ObservableObject{
     
     func changeReps(_ x: (Int, Int) -> Int) -> Void{
         let y =  x(reps, 1)
-        
         if(y < 1){
             reps = 1
         }
@@ -95,7 +94,6 @@ class Activity: Identifiable, ObservableObject{
             reps = x(reps, 1)
         }
     }
-    
 }
 class Data: ObservableObject{
     @Published var activities: [Activity]

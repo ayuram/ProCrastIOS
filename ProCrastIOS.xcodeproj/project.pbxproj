@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E11D2544CA42003F108D /* LoginView.swift */; };
+		C9A0E13425452828003F108D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A0E13325452828003F108D /* GoogleService-Info.plist */; };
 		C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */; };
 		C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA357253BCCDF00EF6D02 /* ContentView.swift */; };
 		C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ECA359253BCCF300EF6D02 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		C9A0E11D2544CA42003F108D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C9A0E13325452828003F108D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCrastIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSApp.swift; sourceTree = "<group>"; };
 		C9ECA357253BCCDF00EF6D02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,8 +136,9 @@
 				C9ECA3C2253BE14200EF6D02 /* Charts */,
 				C9ECA3C1253BE12000EF6D02 /* Activity */,
 				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
-				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
 				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
+				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
+				C9A0E13325452828003F108D /* GoogleService-Info.plist */,
 				C9ECA35B253BCCF300EF6D02 /* Preview Content */,
 			);
 			path = ProCrastIOS;
@@ -304,6 +307,7 @@
 			files = (
 				C9ECA35D253BCCF300EF6D02 /* Preview Assets.xcassets in Resources */,
 				C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */,
+				C9A0E13425452828003F108D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

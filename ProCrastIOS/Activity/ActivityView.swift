@@ -8,6 +8,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Combine
 
 extension CGFloat{
     static func random() -> CGFloat{
@@ -32,13 +33,12 @@ struct ActivityView: View {
     let myColor: Color
     @ObservedObject var stopWatch = StopWatch()
     @State var on = true
-    
+    @State var startIndex = ""
+    @State var endIndex = ""
     @State var show = false
     init(_ act: Activity){
         activity = act
         myColor = activity.color
-        
-       // due = activity.deadline
     }
     
     var body: some View {
@@ -83,21 +83,39 @@ struct ActivityView: View {
                             LineGraph(activity.times.map{CGFloat($0)}.normalized)
                                 .trim(to: on ? 1: 0)
                                 .stroke(activity.color, lineWidth: 2)
-                                
                                 .animation(.easeInOut(duration: 1.5))
-                                
                                 .border(Color.gray, width: 1)
                         }.padding()
                     }.padding()
                         .sheet(isPresented: $show){
                             NavigationView{
-//                                DatePicker("Please enter the deadline", selection: self.$due, displayedComponents: [.date, .hourAndMinute])
-//                                    .labelsHidden()
-//                                    .navigationBarTitle("Select a Date")
-//                                    .navigationBarItems(trailing: Button("Save"){
-//                                        //self.activity.deadline = self.due
-//                                        self.show = false
-//                                    })
+                                HStack{
+                                    TextField("Start Page", text: $startIndex)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .keyboardType(.numberPad)
+                                        .onReceive(Just(startIndex), perform: { newValue in
+                                            let filtered = newValue.filter {"0123456789".contains($0)}
+                                            startIndex = filtered != newValue ? filtered : startIndex
+                                        })
+                                    TextField("End Page", text: $endIndex)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .keyboardType(.numberPad)
+                                        .onReceive(Just(endIndex), perform: { newValue in
+                                            let filtered = newValue.filter {"0123456789".contains($0)}
+                                            endIndex = filtered != newValue ? filtered : endIndex
+                                        })
+                                }
+                                .navigationBarTitle("Enter Page Numbers")
+                                .navigationBarItems(leading: Button("Cancel"){
+                                    show = false
+                                    startIndex = ""
+                                    endIndex = ""
+                                }, trailing: Button("Save"){
+                                    activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
+                                    show = false
+                                    startIndex = ""
+                                    endIndex = ""
+                                })
                             }
                     }
                     
@@ -106,7 +124,7 @@ struct ActivityView: View {
             
         .navigationBarTitle(activity.name)
                 .navigationBarItems(trailing: Button("Set Pages"){
-            self.show = true
+                    self.show = true
                 }.opacity(activity.textbook == .none ? 0 : 1)
                 .disabled(activity.textbook == .none))
     }

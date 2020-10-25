@@ -34,17 +34,12 @@ struct ActivityCard: View {
                     }
                     .scaleEffect(0.7)
                 }.padding()
+                
             }.foregroundColor(Color("text"))
         }
-            
-        .frame(width: 110.0, height: 180.0)
-            //.background(LinearGradient(gradient: Gradient(colors: [Color(activity.color), Color(.random())]), startPoint: .top, endPoint: .bottomTrailing))
+        .frame(width: 130.0, height: 180.0)
             .background(activity.color)
-            
-            //.overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 0.1))
             .clipShape(RoundedRectangle(cornerRadius: 10))
-        
-        
     }
 }
 

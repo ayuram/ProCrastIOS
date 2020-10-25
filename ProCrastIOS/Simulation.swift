@@ -15,6 +15,7 @@ struct Simulation: View {
     @State var show = false
     @State var cards: [Activity] = []
     @State var new: UUID? = .none
+    @State var start = ""
     let color = Color(.random())
     //@ObservedObject var activities: Activities = Activities()
 //    init(){
@@ -23,7 +24,7 @@ struct Simulation: View {
     var body: some View{
         NavigationView{
             ZStack{
-                LinearGradient(gradient: Gradient(colors: [Color("accent"), color]), startPoint: .leading, endPoint: .trailing)
+                LinearGradient(gradient: Gradient(colors: [Color("accent"), color]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
             VStack{
                 Spacer()
@@ -31,7 +32,7 @@ struct Simulation: View {
                     Text("Start Time ")
                         .font(.title)
                         .bold()
-                    Text("10:30 PM")
+                    Text(start)
                         .font(.title)
                         .bold()
                         .foregroundColor(Color("accent"))
@@ -51,12 +52,12 @@ struct Simulation: View {
                                             .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX) / -10), axis: (x: 0, y: 10.0, z: 0.0))
                                                 .shadow(radius: 5)
                                     }
-                                        .frame(width: 110, height: 180, alignment: .center)
+                                    .frame(width: 130, height: 250, alignment: .center)
                                 }
                                 Text("")
                                     .frame(width: 200)
                             }
-                        }.frame(height: 180)
+                        }.frame(height: 250)
                     
                     VStack{
                         HStack{
@@ -75,7 +76,10 @@ struct Simulation: View {
                                         }
                                     }
                                     .navigationBarTitle("Pick an Activity")
-                                    .navigationBarItems(trailing: Button("Save"){
+                                    .navigationBarItems(leading: Button("Cancel"){
+                                        new = .none
+                                        show = false
+                                    }, trailing: Button("Save"){
                                         if(new != .none){
                                             cards.append(
                                                 activities.activities
@@ -97,17 +101,14 @@ struct Simulation: View {
                         }
                     }.padding(5)
                 }.frame(height: 250, alignment: .trailing)
-                
-                HStack{
-                Text("Sleep Deadline")
-                    .font(.headline)
-                DatePicker("Sleep Deadline", selection: $due, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
-                }
-                .frame(width: 300, height: 50)
-                .background(Color("background"))
-                .clipShape(Capsule())
-                .shadow(radius: 5)
+                DatePicker("Sleep Deadline", selection: $due, in: Date()... , displayedComponents: .hourAndMinute)
+                        .frame(width: 300, height: 50)
+                        .background(Color("background"))
+                        .clipShape(Capsule())
+                //.frame(width: 300, height: 50)
+                //.background(Color("background"))
+                //.clipShape(Capsule())
+                //.shadow(radius: 5)
                 Spacer()
     //            ThemedButton(text: "Calculate"){
     //                var components = DateComponents()
@@ -119,16 +120,24 @@ struct Simulation: View {
     //            }
             }
             }
-        .navigationBarTitle("Dashboard")
+            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 50){
+                startTime()
+            })
+            .navigationBarTitle("Dashboard")
         }
         //        Button("click me"){
         //            self.activities.activities.map { self.addEventToCalendar(title: $0.name, description: $0.name , startDate: Date(timeIntervalSinceNow: TimeInterval()), timespan: TimeInterval())}
         //        }
     }
+    func startTime() {
+        let num = cards.reduce(0.0){ $0 + ($1.avgTime() ?? 0) * Double($1.reps)}
+        let date = due.addingTimeInterval(TimeInterval(-Int(num) * 60))
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        start = formatter.string(from: date)
+    }
 }
-func startTime(date: Date, acts: [Activity]) {
-    
-}
+
 
 struct Simulation_Previews: PreviewProvider {
     static var previews: some View {

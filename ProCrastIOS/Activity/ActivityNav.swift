@@ -28,20 +28,14 @@ struct ActivityNav: View {
                     HStack {
                         VStack{
                         Text(activity.name)
-                            //.font(.system(size: 24.0))
-                            //.font(.system(.subheadline))
-                            .padding(12)
-                        //grade()
-                        //.font(.system(size: 12.0))
-                        
-                            
-                        }.padding(.leading, 20)
+                            .bold() 
+                        }
                         Spacer()
                         
-                    }.padding(.trailing,100)
+                    }
                 
                 
-                    .background(activity.color)
+                    
                 //.clipShape(Capsule())
         }
     }
