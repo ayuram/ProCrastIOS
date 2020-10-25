@@ -29,9 +29,9 @@ struct ActivityStats: View {
                         }.padding()
                         HStack{
                             VStack{
-                                Text("20")
+                                Text("\(act.times.max()?.int() ?? 0)")
                                 Spacer()
-                                Text("0")
+                                Text("\(act.times.min()?.int() ?? 0)")
                             }.padding(.vertical, 10)
                             LineGraph(act.times.map{CGFloat($0)}.normalized)
                                 .trim(to: animateChart ? 1 : 0)
