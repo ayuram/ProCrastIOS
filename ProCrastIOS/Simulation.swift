@@ -30,10 +30,10 @@ struct Simulation: View {
             VStack{
                 Spacer()
                 HStack{
-                    Text("Start Time ")
+                    Text("Start Time")
                         .font(.title)
                         .bold()
-                    Text(start)
+                    Text(" \(start)")
                         .font(.title)
                         .bold()
                         .foregroundColor(Color("accent"))
