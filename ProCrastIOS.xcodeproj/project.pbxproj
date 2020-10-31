@@ -33,6 +33,7 @@
 		C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AA253BD51300EF6D02 /* Activity.swift */; };
 		C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */; };
 		C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */; };
+		C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C9FECDC8254CEBD100036F6E /* SwiftUICharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 				C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */,
 				C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */,
 				849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */,
+				C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +248,7 @@
 				C9ECA34F253BCCDF00EF6D02 /* Frameworks */,
 				C9ECA350253BCCDF00EF6D02 /* Resources */,
 				552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */,
+				3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +259,7 @@
 				C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */,
 				C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */,
 				C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */,
+				C9FECDC8254CEBD100036F6E /* SwiftUICharts */,
 			);
 			productName = ProCrastIOS;
 			productReference = C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */;
@@ -289,6 +293,7 @@
 				C9ECA36B253BCCF300EF6D02 /* Frameworks */,
 				C9ECA36C253BCCF300EF6D02 /* Resources */,
 				DC4BEC9F92FD9E25FC86E79A /* [CP] Embed Pods Frameworks */,
+				3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,6 +338,7 @@
 			mainGroup = C9ECA349253BCCDF00EF6D02;
 			packageReferences = (
 				C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = C9ECA353253BCCDF00EF6D02 /* Products */;
 			projectDirPath = "";
@@ -393,6 +399,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */ = {
@@ -824,6 +864,14 @@
 				minimumVersion = 0.8.0;
 			};
 		};
+		C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -841,6 +889,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableCoreLocation;
+		};
+		C9FECDC8254CEBD100036F6E /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

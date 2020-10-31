@@ -9,7 +9,7 @@
 import SwiftUI
 import Foundation
 import EventKit
-
+import SwiftUICharts
 struct Simulation: View {
     @EnvironmentObject var activities: Data
     @State var due: Date = Date()
@@ -106,23 +106,10 @@ struct Simulation: View {
                         .frame(width: 300, height: 50)
                         .background(Color("background"))
                         .clipShape(Capsule())
-                //.frame(width: 300, height: 50)
-                //.background(Color("background"))
-                //.clipShape(Capsule())
-                //.shadow(radius: 5)
-                
                 Spacer()
-    //            ThemedButton(text: "Calculate"){
-    //                var components = DateComponents()
-    //                components.hour = 8
-    //                components.minute = 0
-    //                let date = Calendar.current.date(from: components) ?? Date()
-    //                self.activities.activities.map { self.addEventToCalendar(title: $0.name, description: $0.name , startDate: Date(timeIntervalSinceNow: TimeInterval()), timespan: TimeInterval())
-    //                }
-    //            }
             }
             }
-            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 50){
+            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 45){
                 startTime()
             })
             .navigationBarTitle("Dashboard")

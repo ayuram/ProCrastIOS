@@ -9,6 +9,7 @@ target 'ProCrastIOS' do
 
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 pod 'Firebase/Firestore'
   target 'ProCrastIOSTests' do
     inherit! :search_paths
