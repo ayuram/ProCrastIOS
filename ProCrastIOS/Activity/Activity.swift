@@ -97,8 +97,10 @@ class Activity: Identifiable, ObservableObject{
 }
 class Data: ObservableObject{
     @Published var activities: [Activity]
+    @Published var user: User
     init(){
         self.activities = []
+        user = .general
     }
     func totalTime() -> Double {
         activities

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 enum User{
     case teacher, student, general
 }
@@ -119,7 +120,7 @@ struct LoginView: View {
                 Image("loadingscreen-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 380, height: 380, alignment: .bottom)
+                    .frame(width: 380, height: 280, alignment: .top)
                     .clipped()
                     
                 Spacer()
@@ -143,14 +144,15 @@ struct LoginView: View {
                 .clipShape(Capsule())
                 .shadow(color: .green, radius: 10)
                 
-                    
                     ThemedButton(text: "Login", buttonColor: .green, width: 300){
                         login()
                     }
-                    
+                
+                    GSignIn()
+                        .frame(width: 300, height: 50)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 Spacer()
-                
                     ThemedButton(text: "Register", buttonColor: .orange, width: 300){
                         sht.toggle()
                     }
@@ -163,9 +165,21 @@ struct LoginView: View {
         })
     }
 }
-
+struct GSignIn: UIViewRepresentable{
+    func makeUIView(context: Context) -> GIDSignInButton {
+        let button = GIDSignInButton()
+        button.colorScheme = .light
+        button.style = .standard
+        return button
+    }
+    
+    func updateUIView(_ uiView: GIDSignInButton, context: Context) {
+        
+    }
+}
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            
     }
 }

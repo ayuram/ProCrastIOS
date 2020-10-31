@@ -28,15 +28,11 @@ struct ActivityNav: View {
                     HStack {
                         VStack{
                         Text(activity.name)
-                            .bold() 
+                            .fontWeight(.semibold)
                         }
                         Spacer()
                         
                     }
-                
-                
-                    
-                //.clipShape(Capsule())
         }
     }
     

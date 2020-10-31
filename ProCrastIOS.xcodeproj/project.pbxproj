@@ -34,6 +34,7 @@
 		C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */; };
 		C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */; };
 		C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C9FECDC8254CEBD100036F6E /* SwiftUICharts */; };
+		C9FECDED254D019800036F6E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FECDEC254D019700036F6E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C9ECA3AA253BD51300EF6D02 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
+		C9FECDEC254D019700036F6E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D39D62ECBBE17F3A2946FFA9 /* Pods-ProCrastIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOSTests.release.xcconfig"; path = "Target Support Files/Pods-ProCrastIOSTests/Pods-ProCrastIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProCrastIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 				C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */,
 				C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */,
 				C9ECA388253BCDC200EF6D02 /* AppModel.swift */,
+				C9FECDEC254D019700036F6E /* CardView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */,
 				C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */,
 				C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */,
+				C9FECDED254D019800036F6E /* CardView.swift in Sources */,
 				C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,13 @@
 import SwiftUI
 import Firebase
 import FirebaseFirestore
+import SwiftUICharts
 struct ActivityStats: View {
     @ObservedObject var act: Activity
+    var chartStyle: ChartStyle
     init(_ a: Activity){
         act = a
+        chartStyle = ChartStyle(backgroundColor: .clear, accentColor: Color("accent"), gradientColor: GradientColor(start: a.color, end: a.color), textColor: .gray, legendTextColor: .gray, dropShadowColor: Color("accent"))
     }
     @State var animateChart = false
     var body: some View {
@@ -20,46 +23,45 @@ struct ActivityStats: View {
                 LinearGradient(gradient: Gradient(colors: [Color("background"), Color("background"), Color("background"), act.color.opacity(1)]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    Spacer()
                     HStack{
-                        VStack{
-                                BarGraph(name: "Average Time", val: act.avgTime() ?? 0, max: 13, units: "mins").animation(.easeInOut(duration: 1))
-                                    .shadow(radius: 10)
-                            
-                        }.padding()
-                        HStack{
-                            VStack{
-                                Text("\(act.times.max()?.int() ?? 0)")
-                                Spacer()
-                                Text("\(act.times.min()?.int() ?? 0)")
-                            }.padding(.vertical, 10)
-                            LineGraph(act.times.map{CGFloat($0)}.normalized)
-                                .trim(to: animateChart ? 1 : 0)
-                                .stroke(act.color, lineWidth: 2)
-                                    .onAppear(perform: {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                                            self.animateChart = true
-                                        }
-                                    })
-                                .animation(.easeInOut(duration: 1))
-                                .border(Color.gray, width: 1)
+                        BarGraph(name: "Average Time", val: act.avgTime() ?? 0, max: 13, units: "mins")
+                            .animation(.easeInOut(duration: 1))
+                            .shadow(radius: 10)
+                            .padding()
+                        if(act.times.count > 0){
+                            LineView(data: act.times, title: "Your Timeline", style: chartStyle)
+                                .frame(height: 400, alignment: .bottom)
+                                .background(Color.clear)
+                                .padding()
                         }
-                    }.frame(height: 200)
+                    }
                     Spacer()
-                    
+                    BarChartView(data: ChartData(values: [("Projected Time", 123), ("Median Time", getAverageTime())]), title: "Pages \(act.textbook?.pages?.first ?? 0) - \(act.textbook?.pages?.last ?? 0)", style: chartStyle, form: ChartForm.extraLarge)
+                        .padding()
+                    Spacer()
                 }
             }.navigationBarTitle(act.name.capitalized)
     }
-    func avgtime() -> some View{
-        switch act.formattedTime(){
-        case .none: return Text("")
-        default: return Text(act.formattedTime()!)
+    func getAverageTime() -> Double{
+        let db = Firestore.firestore()
+        var arr: [Double] = []
+        for n in act.textbook!.pages!{
+            let docRef = db.collection("\(act.textbook!.ISBN)").document("\(n)")
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data()?["median"] as? Double ?? 0
+                    arr.append(dataDescription)
+                }
+            }
         }
+        return arr.mean()
     }
 }
 
 struct ActivityStats_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityStats(Activity("hello"))
+            ActivityStats(Activity("hello"))
+                .preferredColorScheme(.dark)
+        
     }
 }

@@ -13,11 +13,11 @@ struct ContentView: View {
     var activities = Data()
     var body: some View{
         TabView{
-//            Config()
-//                .tabItem{
-//                    Image(systemName: "gear")
-//                    Text("Settings")
-//            }
+            Config()
+                .tabItem{
+                    Image(systemName: "person")
+                    Text("Profile")
+            }
             ActivityMenu()
                 .tabItem{
                     Image(systemName: "list.dash")
