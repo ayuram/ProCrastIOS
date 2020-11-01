@@ -95,12 +95,21 @@ class Activity: Identifiable, ObservableObject{
         }
     }
 }
+class User: ObservableObject{
+    var name: String
+    var type: UserType = .general
+    let id: UUID = UUID()
+    init(name: String){
+        self.name = name
+    }
+}
 class Data: ObservableObject{
     @Published var activities: [Activity]
     @Published var user: User
+    
     init(){
         self.activities = []
-        user = .general
+        user = User(name: "Ayush Raman")
     }
     func totalTime() -> Double {
         activities

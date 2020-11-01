@@ -11,6 +11,7 @@ import ComposableArchitecture
 import Combine
 import FirebaseFirestore
 import Firebase
+import SwiftUICharts
 extension CGFloat{
     static func random() -> CGFloat{
         return CGFloat(CGFloat(arc4random()) / CGFloat(UInt32.max))
@@ -30,7 +31,7 @@ extension Double{
     }
 }
 struct ActivityView: View {
-    public let activity: Activity
+    @ObservedObject var activity: Activity
     let myColor: Color
     @ObservedObject var stopWatch = StopWatch()
     @State var on = true
@@ -39,13 +40,13 @@ struct ActivityView: View {
     @State var show = false
     init(_ act: Activity){
         activity = act
-        myColor = activity.color
+        myColor = act.color
     }
     
     var body: some View {
         
                 VStack{
-                    Spacer()
+                    
                     Text(self.stopWatch.stopWatchTime)
                         .font(.custom("courier", size: 70))
                         .frame(width: UIScreen.main.bounds.size.width,
@@ -73,20 +74,9 @@ struct ActivityView: View {
                     
                     VStack {
                         recentTime()
-                        .animation(.easeInOut(duration: 1))
+                            .animation(.default)
                         .minimumScaleFactor(0.1)
-                        HStack{
-                            VStack{
-                                Text("\(activity.times.max()?.int() ?? 0)")
-                                Spacer()
-                                Text("\(activity.times.min()?.int() ?? 0)")
-                            }
-                            LineGraph(activity.times.map{CGFloat($0)}.normalized)
-                                .trim(to: on ? 1: 0)
-                                .stroke(activity.color, lineWidth: 2)
-                                .animation(.easeInOut(duration: 1.5))
-                                .border(Color.gray, width: 1)
-                        }.padding()
+                        BarChartView(data: ChartData(values: [("Your Average", activity.avgTime() ?? 0), ("Projected Time", 1), ("Median Time", 17)]), title: "Data")
                     }.padding()
                         .sheet(isPresented: $show){
                             NavigationView{
@@ -112,34 +102,32 @@ struct ActivityView: View {
                                     startIndex = ""
                                     endIndex = ""
                                 }, trailing: Button("Save"){
-                                    activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
-                                    activity.times = []
-                                    
-                                    let db = Firestore.firestore()
-                                    var arr: [Double] = []
-                                    for n in activity.textbook!.pages!{
-                                        print("loading in")
-                                        let docRef = db.collection("\(activity.textbook!.ISBN)").document("\(n)")
-                                        docRef.getDocument { (document, error) in
-                                            if let document = document, document.exists {
-                                                let dataDescription = document.data()?["times"] as? [Double] ?? []
-                                                arr = arr + dataDescription
-                                                print(dataDescription, " and ", arr)
-                                                activity.addTime(arr.mean())
-                                            }
-                                        }
-                                    }
-                                    print("Array", arr)
-                                    activity.times.append(arr.mean())
-                                    //print("Times: ", arr)
-                                    show = false
+//                                    activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
+//                                    activity.times = []
+//
+//                                    let db = Firestore.firestore()
+//                                    var arr: [Double] = []
+//                                    for n in activity.textbook!.pages!{
+//                                        print("loading in")
+//                                        let docRef = db.collection("\(activity.textbook!.ISBN)").document("\(n)")
+//                                        docRef.getDocument { (document, error) in
+//                                            if let document = document, document.exists {
+//                                                let dataDescription = document.data()?["times"] as? [Double] ?? []
+//                                                arr = arr + dataDescription
+//                                                print(dataDescription, " and ", arr)
+//                                                activity.addTime(arr.mean())
+//                                            }
+//                                        }
+//                                    }
+//                                    print("Array", arr)
+//                                    activity.times.append(arr.mean())
+//                                    //print("Times: ", arr)
+//                                    show = false
                                 })
                             }
                     }
                     
                 }
-            
-            
         .navigationBarTitle(activity.name)
                 .navigationBarItems(trailing: Button("Set Pages"){
                     self.show = true
@@ -152,24 +140,24 @@ struct ActivityView: View {
             activity.addTime(val)
            // let db = Firestore.firestore()
            
-            if activity.textbook?.pages != .none {
-//                db.collection(activity.textbook!.ISBN).document("0").setData(["Timings": 2017, "Type" : "MeMyself"])
-                
-                for n in (activity.textbook?.pages)!{
-                    let docRef = Firestore.firestore().document("\(String(describing: activity.textbook!.ISBN))/\(Int(n))")
-                    print("setting data")
-                    docRef.setData(["\(UUID())" : true], merge: true){ error in
-                        if let error = error {
-                            print("error = \(error)")
-                        } else {
-                            print("uploaded")
-                        }
-                    }
-                    docRef.updateData([
-                        "times": FieldValue.arrayUnion([activity.times.last!])
-                    ])
-                }
-            }
+//            if activity.textbook?.pages != .none {
+////                db.collection(activity.textbook!.ISBN).document("0").setData(["Timings": 2017, "Type" : "MeMyself"])
+//
+//                for n in (activity.textbook?.pages)!{
+//                    let docRef = Firestore.firestore().document("\(String(describing: activity.textbook!.ISBN))/\(Int(n))")
+//                    print("setting data")
+//                    docRef.setData(["\(UUID())" : true], merge: true){ error in
+//                        if let error = error {
+//                            print("error = \(error)")
+//                        } else {
+//                            print("uploaded")
+//                        }
+//                    }
+//                    docRef.updateData([
+//                        "times": FieldValue.arrayUnion([activity.times.last!])
+//                    ])
+//                }
+//            }
         }
         self.stopWatch.reset()
     }

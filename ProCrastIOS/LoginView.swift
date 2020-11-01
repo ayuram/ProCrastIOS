@@ -8,9 +8,17 @@
 import SwiftUI
 import Firebase
 import GoogleSignIn
-enum User{
+enum UserType{
     case teacher, student, general
+    func toString() -> String{
+        switch self {
+        case .teacher: return "Teacher"
+        case .student: return "Student"
+        case .general: return "General User"
+        }
+    }
 }
+
 struct LoginView: View {
     @State var password: String = ""
     @State var email: String = ""
@@ -19,7 +27,7 @@ struct LoginView: View {
     @State var showAlert = false
     @State var success = false
     @State var sht = false
-    @State var user = User.student
+    @State var user = UserType.student
     var body: some View {
         view()
             //.animation(.linear)
@@ -86,13 +94,13 @@ struct LoginView: View {
                 HStack{
                     Text("I am a ")
                     Picker("Person", selection: $user){
-                        Text("student").tag(User.student)
-                        Text("teacher").tag(User.teacher)
-                        Text("general user").tag(User.general)
+                        Text("student").tag(UserType.student)
+                        Text("teacher").tag(UserType.teacher)
+                        Text("general user").tag(UserType.general)
                     }
                 }.padding()
             }
-            .navigationBarTitle("Register Your Account")
+            .navigationBarTitle("Register Account")
             .navigationBarItems(leading: Button("Cancel"){
                 password = ""
                 confirmPass = ""
@@ -142,8 +150,8 @@ struct LoginView: View {
                 .frame(width: 300, height: 100, alignment: .center)
                 .background(Color("background"))
                 .clipShape(Capsule())
-                .shadow(color: .green, radius: 10)
-                
+                .shadow(color: success ? .green : .red, radius: success ? 3 : 10)
+                .animation(.default)
                     ThemedButton(text: "Login", buttonColor: .green, width: 300){
                         login()
                     }
@@ -172,7 +180,6 @@ struct GSignIn: UIViewRepresentable{
         button.style = .standard
         return button
     }
-    
     func updateUIView(_ uiView: GIDSignInButton, context: Context) {
         
     }
