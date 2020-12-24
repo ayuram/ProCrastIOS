@@ -36,8 +36,10 @@ struct ActivityStats: View {
                         }
                     }
                     Spacer()
-                    BarChartView(data: ChartData(values: [("Projected Time", 123), ("Median Time", getAverageTime())]), title: "Pages \(act.textbook?.pages?.first ?? 0) - \(act.textbook?.pages?.last ?? 0)", style: chartStyle, form: ChartForm.extraLarge)
-                        .padding()
+                    if act.textbook != .none{
+                        BarChartView(data: ChartData(values: [("Projected Time", 123), ("Median Time", getAverageTime())]), title: "Pages \(act.textbook?.pages?.first ?? 0) - \(act.textbook?.pages?.last ?? 0)", style: chartStyle, form: ChartForm.extraLarge)
+                            .padding()
+                    }
                     Spacer()
                 }
             }.navigationBarTitle(act.name.capitalized)
@@ -45,7 +47,7 @@ struct ActivityStats: View {
     func getAverageTime() -> Double{
         let db = Firestore.firestore()
         var arr: [Double] = []
-        for n in act.textbook!.pages!{
+        for n in act.textbook?.pages ?? 0 ... 0{
             let docRef = db.collection("\(act.textbook!.ISBN)").document("\(n)")
             docRef.getDocument { (document, error) in
                 if let document = document, document.exists {

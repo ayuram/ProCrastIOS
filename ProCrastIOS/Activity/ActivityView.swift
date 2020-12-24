@@ -102,27 +102,27 @@ struct ActivityView: View {
                                     startIndex = ""
                                     endIndex = ""
                                 }, trailing: Button("Save"){
-//                                    activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
-//                                    activity.times = []
-//
-//                                    let db = Firestore.firestore()
-//                                    var arr: [Double] = []
-//                                    for n in activity.textbook!.pages!{
-//                                        print("loading in")
-//                                        let docRef = db.collection("\(activity.textbook!.ISBN)").document("\(n)")
-//                                        docRef.getDocument { (document, error) in
-//                                            if let document = document, document.exists {
-//                                                let dataDescription = document.data()?["times"] as? [Double] ?? []
-//                                                arr = arr + dataDescription
-//                                                print(dataDescription, " and ", arr)
-//                                                activity.addTime(arr.mean())
-//                                            }
-//                                        }
-//                                    }
-//                                    print("Array", arr)
-//                                    activity.times.append(arr.mean())
-//                                    //print("Times: ", arr)
-//                                    show = false
+                                    activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
+                                    activity.times = []
+
+                                    let db = Firestore.firestore()
+                                    var arr: [Double] = []
+                                    for n in activity.textbook!.pages!{
+                                        print("loading in")
+                                        let docRef = db.collection("\(activity.textbook!.ISBN)").document("\(n)")
+                                        docRef.getDocument { (document, error) in
+                                            if let document = document, document.exists {
+                                                let dataDescription = document.data()?["times"] as? [Double] ?? []
+                                                arr = arr + dataDescription
+                                                print(dataDescription, " and ", arr)
+                                                activity.addTime(arr.mean())
+                                            }
+                                        }
+                                    }
+                                    print("Array", arr)
+                                    activity.times.append(arr.mean())
+                                    //print("Times: ", arr)
+                                    show = false
                                 })
                             }
                     }

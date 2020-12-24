@@ -34,6 +34,7 @@ struct LoginView: View {
             .sheet(isPresented: $sht){
                 registerField()
             }
+        
     }
     func login(){
         Auth.auth().signIn(withEmail: email, password: password){ (result, error) in
@@ -113,10 +114,11 @@ struct LoginView: View {
     }
     func view() -> some View{
         if(!success){
-            return AnyView(loginScreen())
+            return AnyView(loginScreen()
+                            .transition(.scale))
         }
         else{
-            return AnyView(ContentView())
+            return AnyView(ContentView().transition(.scale))
         }
     }
     func loginScreen() -> some View{
