@@ -9,6 +9,7 @@
 import SwiftUI
 import Foundation
 import EventKit
+import SwiftUICharts
 struct Simulation: View {
     @EnvironmentObject var activities: Data
     @State var due: Date = Date()
@@ -16,11 +17,8 @@ struct Simulation: View {
     @State var cards: [Activity] = []
     @State var new: UUID? = .none
     @State var start = ""
+    @State var hoursSlept = 8
     let color = Color(.random())
-    //@ObservedObject var activities: Activities = Activities()
-//    init(){
-//        activities.activities = [Activity("hello"), Activity("ok"), Activity("ok"), Activity("ok"), Activity("ok"), Activity("ok")]
-//    }
     var body: some View{
         NavigationView{
             ZStack{
@@ -29,20 +27,21 @@ struct Simulation: View {
             VStack{
                 Spacer()
                 HStack{
-                    Text("Start Time ")
+                    Text("Start Time")
                         .font(.title)
                         .bold()
-                    Text(start)
-                        .font(.title)
-                        .bold()
-                        .foregroundColor(Color("accent"))
-                }
+                    if(start != ""){
+                        Text(" \(start)")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(Color("accent"))
+                    }
+                }.animation(.default)
                 .padding()
                 .background(Color("background"))
                 .clipShape(Capsule())
                 .shadow(radius: 5)
                 Spacer()
-                
                 ZStack{
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack(spacing: 10){
@@ -69,65 +68,89 @@ struct Simulation: View {
                                 show.toggle()
                             }
                             .sheet(isPresented: $show, content: {
-                                NavigationView{
-                                    Picker("Activity", selection: $new){
-                                        ForEach(activities.activities){ activity in
-                                            Text(activity.name).tag(activity.id)
-                                        }
-                                    }
-                                    .navigationBarTitle("Pick an Activity")
-                                    .navigationBarItems(leading: Button("Cancel"){
-                                        new = .none
-                                        show = false
-                                    }, trailing: Button("Save"){
-                                        if(new != .none){
-                                            cards.append(
-                                                activities.activities
-                                                    .first(where: {$0.id == new}) ?? Activity("")
-                                            )
-                                        }
-                                        new = .none
-                                        show = false
-                                    })
-                                }
+                                alertSheet()
                             })
                         }
                         Spacer()
                         HStack{
                             Spacer()
                             ThemedButton(text: "-", buttonColor: .red, width: 35, height: 35){
-                                cards.removeLast()
+                                if(cards.count > 0){
+                                    cards.removeLast()
+                                }
                             }
                         }
                     }.padding(5)
                 }.frame(height: 250, alignment: .trailing)
-                DatePicker("Sleep Deadline", selection: $due, in: Date()... , displayedComponents: .hourAndMinute)
-                        .frame(width: 300, height: 50)
-                        .background(Color("background"))
-                        .clipShape(Capsule())
-                //.frame(width: 300, height: 50)
-                //.background(Color("background"))
-                //.clipShape(Capsule())
-                //.shadow(radius: 5)
+                VStack{
+                    DatePicker("Sleep Deadline", selection: $due, in: Date()... , displayedComponents: .hourAndMinute)
+                    Stepper(value: $hoursSlept, in: 3 ... 12) {
+                        Text("\(hoursSlept) Hours Slept")
+                    }
+                }
+                .padding()
+                .frame(width: 300, height: 100)
+                .background(Color("background"))
+                .clipShape(RoundedRectangle(cornerRadius: 25))
+                .shadow(radius: 12)
+                
                 Spacer()
-    //            ThemedButton(text: "Calculate"){
-    //                var components = DateComponents()
-    //                components.hour = 8
-    //                components.minute = 0
-    //                let date = Calendar.current.date(from: components) ?? Date()
-    //                self.activities.activities.map { self.addEventToCalendar(title: $0.name, description: $0.name , startDate: Date(timeIntervalSinceNow: TimeInterval()), timespan: TimeInterval())
-    //                }
-    //            }
             }
             }
-            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 50){
+//            .sheet(isPresented: $otherSheet, content: {
+//                alertSheet()
+//            })
+            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 45){
                 startTime()
             })
             .navigationBarTitle("Dashboard")
         }
-        //        Button("click me"){
-        //            self.activities.activities.map { self.addEventToCalendar(title: $0.name, description: $0.name , startDate: Date(timeIntervalSinceNow: TimeInterval()), timespan: TimeInterval())}
-        //        }
+    }
+    func alertSheet() -> some View{
+//        if(otherSheet){
+//            return AnyView(NavigationView{
+//                VStack{
+//                DatePicker("Sleep Deadline", selection: $due, in: Date()... , displayedComponents: .hourAndMinute)
+//                Stepper(value: $hoursSlept, in: 3 ... 12) {
+//                    Text("\(hoursSlept) Hours Slept")
+//                }
+//                    Spacer()
+//                    ThemedButton(text: "Let's Go", width: 200){
+//                        otherSheet.toggle()
+//                    }
+//            }
+//                .navigationBarTitle("Before You Start ...")
+//            .padding()
+//            .frame(width: 300, height: 200)
+//            .background(Color("background"))
+//            .clipShape(RoundedRectangle(cornerRadius: 25))
+//            .shadow(radius: 12)
+//
+//            })
+//        }
+        
+           return AnyView(NavigationView{
+                Picker("Activity", selection: $new){
+                    ForEach(activities.activities){ activity in
+                        Text(activity.name).tag(activity.id)
+                    }
+                }
+                .navigationBarTitle("Pick an Activity")
+                .navigationBarItems(leading: Button("Cancel"){
+                    new = .none
+                    show = false
+                }, trailing: Button("Save"){
+                    if(new != .none){
+                        cards.append(
+                            activities.activities
+                                .first(where: {$0.id == new}) ?? Activity("")
+                        )
+                    }
+                    new = .none
+                    show = false
+                })
+            })
+        
     }
     func startTime() {
         let num = cards.reduce(0.0){ $0 + ($1.avgTime() ?? 0) * Double($1.reps)}

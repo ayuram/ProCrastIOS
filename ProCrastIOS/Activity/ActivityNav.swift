@@ -2,7 +2,7 @@
 //  ActivityNav.swift
 //  ProCrast
 //
-//  Created by Ayush Raman on 8/6/20.
+//  Created by Ayush Raman on 10/23/20.
 //  Copyright © 2020 Answer Key. All rights reserved.
 //
 
@@ -28,15 +28,11 @@ struct ActivityNav: View {
                     HStack {
                         VStack{
                         Text(activity.name)
-                            .bold() 
+                            .fontWeight(.semibold)
                         }
                         Spacer()
                         
                     }
-                
-                
-                    
-                //.clipShape(Capsule())
         }
     }
     

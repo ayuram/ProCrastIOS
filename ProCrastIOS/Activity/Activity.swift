@@ -25,7 +25,7 @@ extension Array where Element == Double{
         self.sorted()[self.count/2]
     }
 }
-struct Textbook: Equatable{
+struct Textbook: Equatable, Codable{
     static func == (lhs: Textbook, rhs: Textbook) -> Bool{
         lhs.ISBN == rhs.ISBN
     }
@@ -37,7 +37,11 @@ extension Int{
         Double(self)
     }
 }
-class Activity: Identifiable, ObservableObject{
+enum ActivityType{
+    case general
+    case textbook(ISBN: String, pages: ClosedRange<Int>)
+}
+class Activity: Identifiable, ObservableObject, Codable{
     var id: UUID
     public var name: String
     var textbook: Textbook? = .none
@@ -50,6 +54,23 @@ class Activity: Identifiable, ObservableObject{
         name = n
         times = []
         id = UUID()
+    }
+    enum CodingKeys: String, CodingKey{
+        case id, name, textbook, times
+    }
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        textbook = try container.decode(Textbook?.self, forKey: .textbook)
+        times = try container.decode([Double].self, forKey: .times)
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(textbook, forKey: .textbook)
+        try container.encode(times, forKey: .times)
     }
     func addTime(_ time: Double) -> Void{
         times.append(time)
@@ -95,10 +116,21 @@ class Activity: Identifiable, ObservableObject{
         }
     }
 }
+class User: ObservableObject{
+    var name: String
+    var type: UserType = .general
+    let id: UUID = UUID()
+    init(name: String){
+        self.name = name
+    }
+}
 class Data: ObservableObject{
     @Published var activities: [Activity]
+    @Published var user: User
+    
     init(){
         self.activities = []
+        user = User(name: "Ayush Raman")
     }
     func totalTime() -> Double {
         activities

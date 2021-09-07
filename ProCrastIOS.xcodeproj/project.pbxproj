@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72B850E0F8A8E4A45E35FF33 /* Pods_ProCrastIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573989BB962E32F5C4627B6E /* Pods_ProCrastIOSTests.framework */; };
+		849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */; };
+		BDDD9CB6892B9DB8CE849724 /* Pods_ProCrastIOS_ProCrastIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EB2C0F5744611BF35B9EB /* Pods_ProCrastIOS_ProCrastIOSUITests.framework */; };
+		C9317A0126E82A1F0004A9AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9317A0026E82A1F0004A9AF /* GoogleService-Info.plist */; };
 		C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E11D2544CA42003F108D /* LoginView.swift */; };
-		C9A0E13425452828003F108D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A0E13325452828003F108D /* GoogleService-Info.plist */; };
 		C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */; };
 		C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA357253BCCDF00EF6D02 /* ContentView.swift */; };
 		C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ECA359253BCCF300EF6D02 /* Assets.xcassets */; };
@@ -30,6 +33,8 @@
 		C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AA253BD51300EF6D02 /* Activity.swift */; };
 		C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */; };
 		C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */; };
+		C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C9FECDC8254CEBD100036F6E /* SwiftUICharts */; };
+		C9FECDED254D019800036F6E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FECDEC254D019700036F6E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		067EB2C0F5744611BF35B9EB /* Pods_ProCrastIOS_ProCrastIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProCrastIOS_ProCrastIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B630719ACBEB84439D10BC /* Pods-ProCrastIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOSTests/Pods-ProCrastIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4465AC12525598A4C5FD06D2 /* Pods-ProCrastIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS.release.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS.release.xcconfig"; sourceTree = "<group>"; };
+		573989BB962E32F5C4627B6E /* Pods_ProCrastIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProCrastIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62F5D05AE800401FFD726059 /* Pods-ProCrastIOS-ProCrastIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS-ProCrastIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AD0A66E94495254275898722 /* Pods-ProCrastIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B8B6C1790D44C524AB68631D /* Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9317A0026E82A1F0004A9AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C9A0E11D2544CA42003F108D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		C9A0E13325452828003F108D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCrastIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSApp.swift; sourceTree = "<group>"; };
 		C9ECA357253BCCDF00EF6D02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +88,9 @@
 		C9ECA3AA253BD51300EF6D02 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
+		C9FECDEC254D019700036F6E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D39D62ECBBE17F3A2946FFA9 /* Pods-ProCrastIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOSTests.release.xcconfig"; path = "Target Support Files/Pods-ProCrastIOSTests/Pods-ProCrastIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProCrastIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +101,8 @@
 				C9ECA3A0253BD0C800EF6D02 /* ComposableCoreLocation in Frameworks */,
 				C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */,
 				C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */,
+				849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */,
+				C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B850E0F8A8E4A45E35FF33 /* Pods_ProCrastIOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,12 +118,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDD9CB6892B9DB8CE849724 /* Pods_ProCrastIOS_ProCrastIOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D7196963573893CF30B5C4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD0A66E94495254275898722 /* Pods-ProCrastIOS.debug.xcconfig */,
+				4465AC12525598A4C5FD06D2 /* Pods-ProCrastIOS.release.xcconfig */,
+				B8B6C1790D44C524AB68631D /* Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig */,
+				62F5D05AE800401FFD726059 /* Pods-ProCrastIOS-ProCrastIOSUITests.release.xcconfig */,
+				27B630719ACBEB84439D10BC /* Pods-ProCrastIOSTests.debug.xcconfig */,
+				D39D62ECBBE17F3A2946FFA9 /* Pods-ProCrastIOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AE96DA0A923CF823B5ABDB14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */,
+				067EB2C0F5744611BF35B9EB /* Pods_ProCrastIOS_ProCrastIOSUITests.framework */,
+				573989BB962E32F5C4627B6E /* Pods_ProCrastIOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C9ECA349253BCCDF00EF6D02 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +155,8 @@
 				C9ECA366253BCCF300EF6D02 /* ProCrastIOSTests */,
 				C9ECA371253BCCF300EF6D02 /* ProCrastIOSUITests */,
 				C9ECA353253BCCDF00EF6D02 /* Products */,
+				7D7196963573893CF30B5C4B /* Pods */,
+				AE96DA0A923CF823B5ABDB14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,8 +181,8 @@
 				C9ECA3C1253BE12000EF6D02 /* Activity */,
 				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
 				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
+				C9317A0026E82A1F0004A9AF /* GoogleService-Info.plist */,
 				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
-				C9A0E13325452828003F108D /* GoogleService-Info.plist */,
 				C9ECA35B253BCCF300EF6D02 /* Preview Content */,
 			);
 			path = ProCrastIOS;
@@ -190,6 +234,7 @@
 				C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */,
 				C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */,
 				C9ECA388253BCDC200EF6D02 /* AppModel.swift */,
+				C9FECDEC254D019700036F6E /* CardView.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -201,9 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9ECA377253BCCF300EF6D02 /* Build configuration list for PBXNativeTarget "ProCrastIOS" */;
 			buildPhases = (
+				57BEB3C4F7B85B08D775E823 /* [CP] Check Pods Manifest.lock */,
 				C9ECA34E253BCCDF00EF6D02 /* Sources */,
 				C9ECA34F253BCCDF00EF6D02 /* Frameworks */,
 				C9ECA350253BCCDF00EF6D02 /* Resources */,
+				552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */,
+				3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +262,7 @@
 				C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */,
 				C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */,
 				C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */,
+				C9FECDC8254CEBD100036F6E /* SwiftUICharts */,
 			);
 			productName = ProCrastIOS;
 			productReference = C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */;
@@ -223,6 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9ECA37A253BCCF300EF6D02 /* Build configuration list for PBXNativeTarget "ProCrastIOSTests" */;
 			buildPhases = (
+				2D90AC0CA70E47EA89346B09 /* [CP] Check Pods Manifest.lock */,
 				C9ECA35F253BCCF300EF6D02 /* Sources */,
 				C9ECA360253BCCF300EF6D02 /* Frameworks */,
 				C9ECA361253BCCF300EF6D02 /* Resources */,
@@ -241,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9ECA37D253BCCF300EF6D02 /* Build configuration list for PBXNativeTarget "ProCrastIOSUITests" */;
 			buildPhases = (
+				7D8ECE56A335702485897D29 /* [CP] Check Pods Manifest.lock */,
 				C9ECA36A253BCCF300EF6D02 /* Sources */,
 				C9ECA36B253BCCF300EF6D02 /* Frameworks */,
 				C9ECA36C253BCCF300EF6D02 /* Resources */,
+				DC4BEC9F92FD9E25FC86E79A /* [CP] Embed Pods Frameworks */,
+				3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +341,7 @@
 			mainGroup = C9ECA349253BCCDF00EF6D02;
 			packageReferences = (
 				C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = C9ECA353253BCCDF00EF6D02 /* Products */;
 			projectDirPath = "";
@@ -307,7 +361,7 @@
 			files = (
 				C9ECA35D253BCCF300EF6D02 /* Preview Assets.xcassets in Resources */,
 				C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */,
-				C9A0E13425452828003F108D /* GoogleService-Info.plist in Resources */,
+				C9317A0126E82A1F0004A9AF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +380,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D90AC0CA70E47EA89346B09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProCrastIOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57BEB3C4F7B85B08D775E823 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProCrastIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D8ECE56A335702485897D29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProCrastIOS-ProCrastIOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4BEC9F92FD9E25FC86E79A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9ECA34E253BCCDF00EF6D02 /* Sources */ = {
@@ -346,6 +537,7 @@
 				C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */,
 				C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */,
 				C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */,
+				C9FECDED254D019800036F6E /* CardView.swift in Sources */,
 				C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,11 +692,13 @@
 		};
 		C9ECA378253BCCF300EF6D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD0A66E94495254275898722 /* Pods-ProCrastIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ProCrastIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = YGQCW3LZRM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ProCrastIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -521,11 +715,13 @@
 		};
 		C9ECA379253BCCF300EF6D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4465AC12525598A4C5FD06D2 /* Pods-ProCrastIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ProCrastIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = YGQCW3LZRM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ProCrastIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -542,6 +738,7 @@
 		};
 		C9ECA37B253BCCF300EF6D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B630719ACBEB84439D10BC /* Pods-ProCrastIOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -563,6 +760,7 @@
 		};
 		C9ECA37C253BCCF300EF6D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D39D62ECBBE17F3A2946FFA9 /* Pods-ProCrastIOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -584,6 +782,7 @@
 		};
 		C9ECA37E253BCCF300EF6D02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8B6C1790D44C524AB68631D /* Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -603,6 +802,7 @@
 		};
 		C9ECA37F253BCCF300EF6D02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62F5D05AE800401FFD726059 /* Pods-ProCrastIOS-ProCrastIOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -670,6 +870,14 @@
 				minimumVersion = 0.8.0;
 			};
 		};
+		C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -687,6 +895,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableCoreLocation;
+		};
+		C9FECDC8254CEBD100036F6E /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

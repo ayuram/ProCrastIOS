@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1009080557103-r0cb28siumbttqcgpc7312mevqttmjpg.apps.googleusercontent.com</string>
+	<string>876273154380-3pk2r9fuefrc60fjabp59t59sj1uof51.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1009080557103-r0cb28siumbttqcgpc7312mevqttmjpg</string>
+	<string>com.googleusercontent.apps.876273154380-3pk2r9fuefrc60fjabp59t59sj1uof51</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDkIqauIeXBCtWDN9iE_9MQMl4GZi-ck74</string>
+	<string>AIzaSyC5bxuE-HT3ytzADrEwMhvFAVSOG1yKtXI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1009080557103</string>
+	<string>876273154380</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>AnswerKey.ProCrast</string>
+	<string>AnswerKey.ProCrastIOS</string>
 	<key>PROJECT_ID</key>
-	<string>procrast-29eaf</string>
+	<string>procrast-82c1a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>procrast-29eaf.appspot.com</string>
+	<string>procrast-82c1a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1009080557103:ios:edd13f6ad05f127972f0da</string>
+	<string>1:876273154380:ios:cc0f6bb1ed07ff577af7e9</string>
 	<key>DATABASE_URL</key>
-	<string>https://procrast-29eaf.firebaseio.com</string>
+	<string>https://procrast-82c1a.firebaseio.com</string>
 </dict>
 </plist>
