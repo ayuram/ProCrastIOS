@@ -11,7 +11,6 @@
 		849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */; };
 		BDDD9CB6892B9DB8CE849724 /* Pods_ProCrastIOS_ProCrastIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EB2C0F5744611BF35B9EB /* Pods_ProCrastIOS_ProCrastIOSUITests.framework */; };
 		C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E11D2544CA42003F108D /* LoginView.swift */; };
-		C9A0E15D2545532D003F108D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A0E15C2545532D003F108D /* GoogleService-Info.plist */; };
 		C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */; };
 		C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA357253BCCDF00EF6D02 /* ContentView.swift */; };
 		C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9ECA359253BCCF300EF6D02 /* Assets.xcassets */; };
@@ -63,7 +62,6 @@
 		AD0A66E94495254275898722 /* Pods-ProCrastIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B6C1790D44C524AB68631D /* Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9A0E11D2544CA42003F108D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		C9A0E15C2545532D003F108D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCrastIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSApp.swift; sourceTree = "<group>"; };
 		C9ECA357253BCCDF00EF6D02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
 				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
 				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
-				C9A0E15C2545532D003F108D /* GoogleService-Info.plist */,
 				C9ECA35B253BCCF300EF6D02 /* Preview Content */,
 			);
 			path = ProCrastIOS;
@@ -361,7 +358,6 @@
 			files = (
 				C9ECA35D253BCCF300EF6D02 /* Preview Assets.xcassets in Resources */,
 				C9ECA35A253BCCF300EF6D02 /* Assets.xcassets in Resources */,
-				C9A0E15D2545532D003F108D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
