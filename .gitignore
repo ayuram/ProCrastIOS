@@ -1,2 +1,7 @@
-
+# API
 GoogleService-Info.plist
+ProCrastIOS/GoogleService-Info.plist
+
+# PODS
+Pods/
+ProCrastIOS/GoogleService-Info.plist

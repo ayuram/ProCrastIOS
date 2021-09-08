@@ -35,10 +35,6 @@ struct LoginView: View {
                 success = true
                 email = ""
                 password = ""
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-//                    username = ""
-//                    password = ""
-//                }
             }
         }
     }
