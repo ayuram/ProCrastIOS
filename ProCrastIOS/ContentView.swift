@@ -10,7 +10,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
-    var activities = Data()
+    var activities = Model()
     var body: some View{
         TabView{
             Config()

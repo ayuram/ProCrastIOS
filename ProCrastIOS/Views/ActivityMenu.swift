@@ -16,7 +16,7 @@ struct ActivityMenu: View {
     @State public var show = false
     @State var type = WhichSheet.book
     @State var acSheet = false
-    @EnvironmentObject var activities: Data
+    @EnvironmentObject var activities: Model
     @State var actname: String = ""
     var body: some View {
         ZStack{
@@ -99,7 +99,7 @@ struct ActivityMenu: View {
                 self.show = false
             },trailing: Button("Save"){
                 let act = Activity(actname)
-                act.textbook = Textbook(ISBN: ISBN, pages: .none)
+                act.textbook = Textbook(id: ISBN, pages: .none)
                 activities.activities.append(act)
                 self.actname = ""
                 self.ISBN = ""
@@ -113,6 +113,6 @@ struct ActivityMenu: View {
 struct ActivityMenu_Previews: PreviewProvider {
     static var previews: some View {
         ActivityMenu()
-            .environmentObject(Data())
+            .environmentObject(Model())
     }
 }

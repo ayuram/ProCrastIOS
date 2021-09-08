@@ -23,15 +23,11 @@
 		C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */; };
 		C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */; };
 		C9ECA391253BCDC300EF6D02 /* ActivityStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */; };
-		C9ECA392253BCDC300EF6D02 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA388253BCDC200EF6D02 /* AppModel.swift */; };
+		C9ECA392253BCDC300EF6D02 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA388253BCDC200EF6D02 /* Stopwatch.swift */; };
 		C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38A253BCDC200EF6D02 /* Config.swift */; };
 		C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */; };
 		C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */; };
-		C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */; };
-		C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */; };
-		C9ECA3A0253BD0C800EF6D02 /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */; };
 		C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AA253BD51300EF6D02 /* Activity.swift */; };
-		C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */; };
 		C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */; };
 		C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C9FECDC8254CEBD100036F6E /* SwiftUICharts */; };
 		C9FECDED254D019800036F6E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FECDEC254D019700036F6E /* CardView.swift */; };
@@ -81,12 +77,11 @@
 		C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
 		C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNav.swift; sourceTree = "<group>"; };
 		C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStats.swift; sourceTree = "<group>"; };
-		C9ECA388253BCDC200EF6D02 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		C9ECA388253BCDC200EF6D02 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		C9ECA38A253BCDC200EF6D02 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityMenu.swift; sourceTree = "<group>"; };
 		C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
 		C9ECA3AA253BD51300EF6D02 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
 		C9FECDEC254D019700036F6E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D39D62ECBBE17F3A2946FFA9 /* Pods-ProCrastIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOSTests.release.xcconfig"; path = "Target Support Files/Pods-ProCrastIOSTests/Pods-ProCrastIOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,9 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9ECA3A0253BD0C800EF6D02 /* ComposableCoreLocation in Frameworks */,
-				C9ECA39E253BD0C800EF6D02 /* ComposableCoreMotion in Frameworks */,
-				C9ECA39C253BD0C800EF6D02 /* ComposableArchitecture in Frameworks */,
 				849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */,
 				C9FECDC9254CEBD100036F6E /* SwiftUICharts in Frameworks */,
 			);
@@ -148,6 +140,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9317A0226E82BCC0004A9AF /* AppModel */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECA3AA253BD51300EF6D02 /* Activity.swift */,
+			);
+			path = AppModel;
+			sourceTree = "<group>";
+		};
+		C9317A0326E82D210004A9AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECA384253BCDC200EF6D02 /* ActivityView.swift */,
+				C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */,
+				C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */,
+				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
+				C9A0E11D2544CA42003F108D /* LoginView.swift */,
+				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9317A0426E82D350004A9AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */,
+				C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */,
+				C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */,
+				C9ECA388253BCDC200EF6D02 /* Stopwatch.swift */,
+				C9FECDEC254D019700036F6E /* CardView.swift */,
+				C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C9ECA349253BCCDF00EF6D02 = {
 			isa = PBXGroup;
 			children = (
@@ -174,13 +200,11 @@
 			isa = PBXGroup;
 			children = (
 				C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */,
-				C9A0E11D2544CA42003F108D /* LoginView.swift */,
 				C9ECA357253BCCDF00EF6D02 /* ContentView.swift */,
+				C9317A0426E82D350004A9AF /* Components */,
+				C9317A0326E82D210004A9AF /* Views */,
+				C9317A0226E82BCC0004A9AF /* AppModel */,
 				C9ECA359253BCCF300EF6D02 /* Assets.xcassets */,
-				C9ECA3C2253BE14200EF6D02 /* Charts */,
-				C9ECA3C1253BE12000EF6D02 /* Activity */,
-				C9ECA383253BCDC200EF6D02 /* Simulation.swift */,
-				C9ECA38A253BCDC200EF6D02 /* Config.swift */,
 				C9317A0026E82A1F0004A9AF /* GoogleService-Info.plist */,
 				C9ECA35E253BCCF300EF6D02 /* Info.plist */,
 				C9ECA35B253BCCF300EF6D02 /* Preview Content */,
@@ -214,31 +238,6 @@
 			path = ProCrastIOSUITests;
 			sourceTree = "<group>";
 		};
-		C9ECA3C1253BE12000EF6D02 /* Activity */ = {
-			isa = PBXGroup;
-			children = (
-				C9ECA3AA253BD51300EF6D02 /* Activity.swift */,
-				C9ECA385253BCDC200EF6D02 /* ActivityCard.swift */,
-				C9ECA38B253BCDC300EF6D02 /* ActivityMenu.swift */,
-				C9ECA386253BCDC200EF6D02 /* ActivityNav.swift */,
-				C9ECA387253BCDC200EF6D02 /* ActivityStats.swift */,
-				C9ECA384253BCDC200EF6D02 /* ActivityView.swift */,
-			);
-			path = Activity;
-			sourceTree = "<group>";
-		};
-		C9ECA3C2253BE14200EF6D02 /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				C9ECA3AF253BD7CA00EF6D02 /* LineGraph.swift */,
-				C9ECA3BC253BDCCA00EF6D02 /* BarGraph.swift */,
-				C9ECA38C253BCDC300EF6D02 /* ThemedButton.swift */,
-				C9ECA388253BCDC200EF6D02 /* AppModel.swift */,
-				C9FECDEC254D019700036F6E /* CardView.swift */,
-			);
-			path = Charts;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,9 +258,6 @@
 			);
 			name = ProCrastIOS;
 			packageProductDependencies = (
-				C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */,
-				C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */,
-				C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */,
 				C9FECDC8254CEBD100036F6E /* SwiftUICharts */,
 			);
 			productName = ProCrastIOS;
@@ -340,7 +336,6 @@
 			);
 			mainGroup = C9ECA349253BCCDF00EF6D02;
 			packageReferences = (
-				C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = C9ECA353253BCCDF00EF6D02 /* Products */;
@@ -527,12 +522,11 @@
 				C9ECA38E253BCDC300EF6D02 /* ActivityView.swift in Sources */,
 				C9ECA391253BCDC300EF6D02 /* ActivityStats.swift in Sources */,
 				C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */,
-				C9ECA392253BCDC300EF6D02 /* AppModel.swift in Sources */,
+				C9ECA392253BCDC300EF6D02 /* Stopwatch.swift in Sources */,
 				C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */,
 				C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */,
 				C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */,
 				C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */,
-				C9ECA3B0253BD7CA00EF6D02 /* LineGraph.swift in Sources */,
 				C9ECA38D253BCDC300EF6D02 /* Simulation.swift in Sources */,
 				C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */,
 				C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */,
@@ -862,14 +856,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.8.0;
-			};
-		};
 		C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -881,21 +867,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9ECA39B253BD0C800EF6D02 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
-		C9ECA39D253BD0C800EF6D02 /* ComposableCoreMotion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableCoreMotion;
-		};
-		C9ECA39F253BD0C800EF6D02 /* ComposableCoreLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9ECA39A253BD0C800EF6D02 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableCoreLocation;
-		};
 		C9FECDC8254CEBD100036F6E /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9FECDC7254CEBD100036F6E /* XCRemoteSwiftPackageReference "ChartView" */;

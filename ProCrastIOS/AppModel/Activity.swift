@@ -8,8 +8,8 @@
 
 import Foundation
 import SwiftUI
-extension Color{
-    static func randomColor() -> Color{
+extension Color {
+    static func randomColor() -> Color {
         let presets = [Color("darkGreen"), Color("pastelGreen"), Color("pastelRed"), Color("magenta"), Color("pink"), Color("pastelBlue"), Color("purple"), Color("pastelAqua")]
         return presets[Int.random(in: 0 ... presets.count - 1)]
     }
@@ -25,11 +25,11 @@ extension Array where Element == Double{
         self.sorted()[self.count/2]
     }
 }
-struct Textbook: Equatable, Codable{
+struct Textbook: Equatable, Codable, Identifiable {
     static func == (lhs: Textbook, rhs: Textbook) -> Bool{
-        lhs.ISBN == rhs.ISBN
+        lhs.id == rhs.id
     }
-    var ISBN: String
+    var id: String
     var pages: ClosedRange<Int>?
 }
 extension Int{
@@ -37,10 +37,7 @@ extension Int{
         Double(self)
     }
 }
-enum ActivityType{
-    case general
-    case textbook(ISBN: String, pages: ClosedRange<Int>)
-}
+
 class Activity: Identifiable, ObservableObject, Codable{
     var id: UUID
     public var name: String
@@ -116,21 +113,13 @@ class Activity: Identifiable, ObservableObject, Codable{
         }
     }
 }
-class User: ObservableObject{
-    var name: String
-    var type: UserType = .general
-    let id: UUID = UUID()
-    init(name: String){
-        self.name = name
-    }
-}
-class Data: ObservableObject{
-    @Published var activities: [Activity]
-    @Published var user: User
-    
+
+
+// class for app model
+class Model: ObservableObject{
+    @Published var activities: [Activity] // published stream of activity array
     init(){
         self.activities = []
-        user = User(name: "Ayush Raman")
     }
     func totalTime() -> Double {
         activities

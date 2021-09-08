@@ -10,21 +10,20 @@ import Firebase
 
 @main
 struct ProCrastIOSApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State var currentUser: User? = .none
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
-        WindowGroup {
-            //ContentView()
-            LoginView()
+        Auth.auth().addStateDidChangeListener { _, user in
+            currentUser = user
         }
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    var window: UIWindow?
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool{
-        print("Setting Up Firebase")
-        FirebaseApp.configure()
-        return true
+        return WindowGroup {
+            switch currentUser {
+                case .none: LoginView()
+                default: ContentView()
+            }
+        }
     }
 }

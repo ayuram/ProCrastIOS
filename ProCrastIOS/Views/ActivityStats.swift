@@ -13,7 +13,7 @@ import SwiftUICharts
 struct ActivityStats: View {
     @ObservedObject var act: Activity
     var chartStyle: ChartStyle
-    init(_ a: Activity){
+    init(_ a: Activity) {
         act = a
         chartStyle = ChartStyle(backgroundColor: .clear, accentColor: Color("accent"), gradientColor: GradientColor(start: a.color, end: a.color), textColor: .gray, legendTextColor: .gray, dropShadowColor: Color("accent"))
     }
@@ -44,19 +44,22 @@ struct ActivityStats: View {
                 }
             }.navigationBarTitle(act.name.capitalized)
     }
-    func getAverageTime() -> Double{
-        let db = Firestore.firestore()
-        var arr: [Double] = []
-        for n in act.textbook?.pages ?? 0 ... 0{
-            let docRef = db.collection("\(act.textbook!.ISBN)").document("\(n)")
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let dataDescription = document.data()?["median"] as? Double ?? 0
-                    arr.append(dataDescription)
-                }
-            }
-        }
-        return arr.mean()
+    func getAverageTime() -> Double {
+        0
+//        let db = Firestore.firestore()
+//        var arr: [Double] = []
+//        db
+//            .collection("\(act.textbook?.id)")
+//        for n in act.textbook?.pages ?? 0 ... 0{
+//            let docRef = db.collection("\(act.textbook!.id)").document("\(n)")
+//            docRef.getDocument { (document, error) in
+//                if let document = document, document.exists {
+//                    let dataDescription = document.data()?["median"] as? Double ?? 0
+//                    arr.append(dataDescription)
+//                }
+//            }
+//        }
+//        return arr.mean()
     }
 }
 

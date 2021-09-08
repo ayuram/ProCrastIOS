@@ -8,16 +8,6 @@
 import SwiftUI
 import Firebase
 import GoogleSignIn
-enum UserType{
-    case teacher, student, general
-    func toString() -> String{
-        switch self {
-        case .teacher: return "Teacher"
-        case .student: return "Student"
-        case .general: return "General User"
-        }
-    }
-}
 
 struct LoginView: View {
     @State var password: String = ""
@@ -27,7 +17,6 @@ struct LoginView: View {
     @State var showAlert = false
     @State var success = false
     @State var sht = false
-    @State var user = UserType.student
     var body: some View {
         view()
             //.animation(.linear)
@@ -92,14 +81,6 @@ struct LoginView: View {
                         .disableAutocorrection(true)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                HStack{
-                    Text("I am a ")
-                    Picker("Person", selection: $user){
-                        Text("student").tag(UserType.student)
-                        Text("teacher").tag(UserType.teacher)
-                        Text("general user").tag(UserType.general)
-                    }
-                }.padding()
             }
             .navigationBarTitle("Register Account")
             .navigationBarItems(leading: Button("Cancel"){
@@ -154,7 +135,7 @@ struct LoginView: View {
                 .clipShape(Capsule())
                 .shadow(color: success ? .green : .red, radius: success ? 3 : 10)
                 .animation(.default)
-                    ThemedButton(text: "Login", buttonColor: .green, width: 300){
+                    ThemedButton("Login", buttonColor: .green){
                         login()
                     }
                 
@@ -163,7 +144,7 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 Spacer()
-                    ThemedButton(text: "Register", buttonColor: .orange, width: 300){
+                    ThemedButton("Register", buttonColor: .orange){
                         sht.toggle()
                     }
                 

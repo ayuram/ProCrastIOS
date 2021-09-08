@@ -11,7 +11,7 @@ import Foundation
 import EventKit
 import SwiftUICharts
 struct Simulation: View {
-    @EnvironmentObject var activities: Data
+    @EnvironmentObject var activities: Model
     @State var due: Date = Date()
     @State var show = false
     @State var cards: [Activity] = []
@@ -19,24 +19,25 @@ struct Simulation: View {
     @State var start = ""
     @State var hoursSlept = 8
     let color = Color(.random())
-    var body: some View{
-        NavigationView{
-            ZStack{
+    var body: some View {
+        NavigationView {
+            ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color("accent"), color]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
-            VStack{
+            VStack {
                 Spacer()
-                HStack{
+                HStack {
                     Text("Start Time")
                         .font(.title)
                         .bold()
-                    if(start != ""){
+                    if(!start.isEmpty){
                         Text(" \(start)")
                             .font(.title)
                             .bold()
                             .foregroundColor(Color("accent"))
                     }
-                }.animation(.default)
+                }
+                .animation(.default)
                 .padding()
                 .background(Color("background"))
                 .clipShape(Capsule())
@@ -61,8 +62,8 @@ struct Simulation: View {
                     VStack{
                         HStack{
                             Spacer()
-                            ThemedButton(text: "+", width: 35, height: 35){
-                                if(activities.activities.count != 0){
+                            ThemedButton("+"){
+                                if(activities.activities.count != 0) {
                                     new = activities.activities[0].id
                                 }
                                 show.toggle()
@@ -74,7 +75,7 @@ struct Simulation: View {
                         Spacer()
                         HStack{
                             Spacer()
-                            ThemedButton(text: "-", buttonColor: .red, width: 35, height: 35){
+                            ThemedButton("-", buttonColor: .red) {
                                 if(cards.count > 0){
                                     cards.removeLast()
                                 }
@@ -100,36 +101,14 @@ struct Simulation: View {
 //            .sheet(isPresented: $otherSheet, content: {
 //                alertSheet()
 //            })
-            .navigationBarItems(trailing: ThemedButton(text: "Calculate", height: 45){
+            .navigationBarItems(trailing: ThemedButton("Calculate") {
                 startTime()
             })
             .navigationBarTitle("Dashboard")
         }
     }
     func alertSheet() -> some View{
-//        if(otherSheet){
-//            return AnyView(NavigationView{
-//                VStack{
-//                DatePicker("Sleep Deadline", selection: $due, in: Date()... , displayedComponents: .hourAndMinute)
-//                Stepper(value: $hoursSlept, in: 3 ... 12) {
-//                    Text("\(hoursSlept) Hours Slept")
-//                }
-//                    Spacer()
-//                    ThemedButton(text: "Let's Go", width: 200){
-//                        otherSheet.toggle()
-//                    }
-//            }
-//                .navigationBarTitle("Before You Start ...")
-//            .padding()
-//            .frame(width: 300, height: 200)
-//            .background(Color("background"))
-//            .clipShape(RoundedRectangle(cornerRadius: 25))
-//            .shadow(radius: 12)
-//
-//            })
-//        }
-        
-           return AnyView(NavigationView{
+        AnyView(NavigationView{
                 Picker("Activity", selection: $new){
                     ForEach(activities.activities){ activity in
                         Text(activity.name).tag(activity.id)
@@ -165,6 +144,6 @@ struct Simulation: View {
 struct Simulation_Previews: PreviewProvider {
     static var previews: some View {
         Simulation()
-            .environmentObject(Data())
+            .environmentObject(Model())
     }
 }

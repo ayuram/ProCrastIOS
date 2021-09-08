@@ -30,7 +30,7 @@ struct BarGraph: View {
                     .font(.caption)
                 ZStack(alignment: .bottom){
                     Capsule().frame(width: width, height: height)
-                        .foregroundColor(Color("text"))
+                        .foregroundColor(Color("background"))
                         
                     Capsule().frame(width: width, height: height * CGFloat((val)/max))
                         .foregroundColor(color())
@@ -41,13 +41,12 @@ struct BarGraph: View {
         
     }
     func abnormal() -> some View{
-        
             VStack{
                 Text(name)
                     .font(.caption)
                 ZStack(alignment: .bottom){
                     Capsule().frame(width: width, height: height)
-                        .foregroundColor(Color("text"))
+                        .foregroundColor(Color("background"))
                         
                     Capsule().frame(width: width, height: height)
                         .foregroundColor(.green)
