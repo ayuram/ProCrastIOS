@@ -102,7 +102,7 @@ struct ActivityView: View {
                         endIndex = ""
                     }, trailing: Button("Save"){
                         activity.textbook?.pages = (Int(startIndex) ?? 0) ... (Int(endIndex) ?? 0)
-                        activity.times = []
+                        activity.entries = []
                         
                         let db = Firestore.firestore()
                         var arr: [Double] = []
@@ -114,12 +114,12 @@ struct ActivityView: View {
                                     let dataDescription = document.data()?["times"] as? [Double] ?? []
                                     arr = arr + dataDescription
                                     print(dataDescription, " and ", arr)
-                                    activity.addTime(arr.mean())
+                                    activity.addEntry(arr.mean())
                                 }
                             }
                         }
                         print("Array", arr)
-                        activity.times.append(arr.mean())
+                        activity.entries.append(arr.mean())
                         //print("Times: ", arr)
                         show = false
                     })
@@ -136,7 +136,7 @@ struct ActivityView: View {
     func save() -> Void{
         if(activity.reps != 0){
             let val = stopWatch.time()/Double(activity.reps)
-            activity.addTime(val)
+            activity.addEntry(val)
             // let db = Firestore.firestore()
             
             //            if activity.textbook?.pages != .none {
@@ -167,7 +167,7 @@ struct ActivityView: View {
         }
     }
     func recentTime() -> some View{
-        switch activity.times.count{
+        switch activity.entries.count{
         case 0: return Text("")
         default: return Text("Recent: \(activity.formattedRecent())").font(.subheadline)
             .bold()

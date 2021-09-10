@@ -6,7 +6,7 @@ target 'ProCrastIOS' do
   use_frameworks!
 
   # Pods for ProCrastIOS
-
+pod 'Firebase'
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'

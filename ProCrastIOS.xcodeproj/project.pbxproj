@@ -11,6 +11,9 @@
 		849BFB9BE1E451718F08E668 /* Pods_ProCrastIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF04CED71EB7F867FA7ED9E5 /* Pods_ProCrastIOS.framework */; };
 		BDDD9CB6892B9DB8CE849724 /* Pods_ProCrastIOS_ProCrastIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 067EB2C0F5744611BF35B9EB /* Pods_ProCrastIOS_ProCrastIOSUITests.framework */; };
 		C9317A0626E84F6B0004A9AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9317A0526E84F6B0004A9AF /* GoogleService-Info.plist */; };
+		C9317A0826E84FC60004A9AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A0726E84FC60004A9AF /* Extensions.swift */; };
+		C9317A0A26E853960004A9AF /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A0926E853960004A9AF /* Statistics.swift */; };
+		C9317A0C26E853C10004A9AF /* TypeCasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A0B26E853C10004A9AF /* TypeCasts.swift */; };
 		C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0E11D2544CA42003F108D /* LoginView.swift */; };
 		C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */; };
 		C9ECA358253BCCDF00EF6D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECA357253BCCDF00EF6D02 /* ContentView.swift */; };
@@ -59,6 +62,9 @@
 		AD0A66E94495254275898722 /* Pods-ProCrastIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B6C1790D44C524AB68631D /* Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9317A0526E84F6B0004A9AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9317A0726E84FC60004A9AF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C9317A0926E853960004A9AF /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		C9317A0B26E853C10004A9AF /* TypeCasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCasts.swift; sourceTree = "<group>"; };
 		C9A0E11D2544CA42003F108D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C9ECA352253BCCDF00EF6D02 /* ProCrastIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProCrastIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ECA355253BCCDF00EF6D02 /* ProCrastIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProCrastIOSApp.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				C9ECA3AA253BD51300EF6D02 /* Activity.swift */,
+				C9317A0726E84FC60004A9AF /* Extensions.swift */,
+				C9317A0926E853960004A9AF /* Statistics.swift */,
+				C9317A0B26E853C10004A9AF /* TypeCasts.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -250,7 +259,6 @@
 				C9ECA34F253BCCDF00EF6D02 /* Frameworks */,
 				C9ECA350253BCCDF00EF6D02 /* Resources */,
 				552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */,
-				3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,7 +300,6 @@
 				C9ECA36B253BCCF300EF6D02 /* Frameworks */,
 				C9ECA36C253BCCF300EF6D02 /* Resources */,
 				DC4BEC9F92FD9E25FC86E79A /* [CP] Embed Pods Frameworks */,
-				3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -399,40 +406,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3787B0E35C646ED3724F4A1F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS-ProCrastIOSUITests/Pods-ProCrastIOS-ProCrastIOSUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3CD4D4DA51B2BF23EF2D3637 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProCrastIOS/Pods-ProCrastIOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		552A2F95EAF29DBE1736C24C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -524,12 +497,15 @@
 				C9A0E11E2544CA42003F108D /* LoginView.swift in Sources */,
 				C9ECA392253BCDC300EF6D02 /* Stopwatch.swift in Sources */,
 				C9ECA396253BCDC300EF6D02 /* ThemedButton.swift in Sources */,
+				C9317A0C26E853C10004A9AF /* TypeCasts.swift in Sources */,
 				C9ECA390253BCDC300EF6D02 /* ActivityNav.swift in Sources */,
 				C9ECA3BD253BDCCB00EF6D02 /* BarGraph.swift in Sources */,
 				C9ECA3AB253BD51300EF6D02 /* Activity.swift in Sources */,
 				C9ECA38D253BCDC300EF6D02 /* Simulation.swift in Sources */,
 				C9ECA395253BCDC300EF6D02 /* ActivityMenu.swift in Sources */,
+				C9317A0826E84FC60004A9AF /* Extensions.swift in Sources */,
 				C9ECA394253BCDC300EF6D02 /* Config.swift in Sources */,
+				C9317A0A26E853960004A9AF /* Statistics.swift in Sources */,
 				C9ECA356253BCCDF00EF6D02 /* ProCrastIOSApp.swift in Sources */,
 				C9FECDED254D019800036F6E /* CardView.swift in Sources */,
 				C9ECA38F253BCDC300EF6D02 /* ActivityCard.swift in Sources */,
